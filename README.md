@@ -1,7 +1,7 @@
 # Advanced-Retrieval-Augmented-Generation-RAG-Techniques
-
-# Advanced RAG Techniques - A Review
+* A comprehensive review of Advanced RAG Techniques for LLMs
 * Research by Adam Lang (February 7, 2024)
+* I plan to add code samples to the repo demonstrating some of these techniques.
 
 # Failure Points of RAG Systems
 
