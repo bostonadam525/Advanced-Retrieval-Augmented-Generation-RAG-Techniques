@@ -1,1 +1,128 @@
+These are notes I made after watching the Weaviate Podcast episode on the future of AI search with Neils Reimer and Connor Shorten
+link to podcast episode: https://www.youtube.com/watch?v=DFqd34ikTH0
 
+
+Cohere embedding models 
+Compass embeddings 
+
+Embeddings are challenging
+- some models claim to have long context lengths (8,000+)
+- Anything beyond 200 tokens they dont work! 
+- Embeddings are like making a soup! --> works ok if you have a few ingredients
+    - search for a few things works "ok" (e.g. search for 3 ingredients)
+	- however, if you get a more complex query, things can go south pretty fast
+	(e.g. which soup has garlic in it) --> becomes "embedding soup"
+	- More words you have more diverse it is --> more complicated it is for 
+	algorithm
+	- Main "topics" are often lost in the "Soup"
+	- Embedding tokens --> more words more diverse --> harder to see end result
+	- Text embeddings have 1 major topic --> smaller topics will be lost in the embedding
+		- Essentially you have a bias vs. variance trade-off
+		- If your embeddings are biased to a few major topics, the learned vector
+		representations of the nearest-neighbors represents this. 
+	
+How to approach this?
+- KG of dense embeddings 
+- example: Jeans of different colors and sizes 
+	- normally you would put them all together in the same embedding space 
+	- with KG approach you semantically separate them
+
+
+Large Document Search 
+- more complex documents, multiple topics 
+
+
+Retrieval
+- embed small --> retrieve big 
+- embedding a long wikipedia article (small chunking)
+- problem: 
+	- chunking is "necessary" right now.
+	- however you lose information if chunks are overlapping and out of context
+	
+- How they solve this 
+	* 1 document becomes many embeddings --> Knowledge Graph
+	
+Similar to multi vector ColBERT!
+- do we give 1 document and you produce a variable amount of embeddings?
+
+- multiple embeddings are better than 1 massive embedding?
+
+ColBERT challenges 
+1. produces TOO MANY embeddings (500 tokens == 500x!)
+2. All tokens are weighted equally including stop words! 
+3. Stop words absent can also confuse the vector space semantics 
+
+
+Perfect world
+- knowledge graph of many dense embeddings 
+
+
+Is Graph RAG now state of the art? 
+- difficult to implement Graphs....
+- knowledge graphs are nice in theory --> but in practice hard to build/maintain
+	- have to binarize attributes
+	- may not translate to real world data?
+- in most cases Neils tries to avoid knowledge graphs 
+
+
+Instruct embeddings?
+- create graphs on the fly of how each subset of embeddings are related?
+- "give it to the model to figure out" --> blackbox output 
+- comes down to data manipulation
+- take average of word embeddings --> cosine similarity --> very limiting 
+- Is ColBERT better? every token has an embedding --> how do you scale this? 
+	- not position aware --> doesnt know if 2 tokens are adjacent
+	- ColBERT is not positional aware with positional encodings
+	
+Multi-vector Search + Retrieve and rerank 
+- Cohere reranker 
+	- finetune reranker 
+	
+Benchmarks
+- beir benchmark: https://github.com/beir-cellar/beir?tab=readme-ov-file
+- mistakes when introducing vector embeddings: https://bergum.medium.com/four-mistakes-when-introducing-embeddings-and-vector-search-d39478a568c5
+Mistake #1: Using pre-trained models without task-specific fine-tuning
+Mistake #2: Using fine-tuned single vector embedding models out-of-domain
+Mistake #3: Lack of understanding of vector search tradeoffs
+
+
+What is future of cross encoders and 2nd stage retriever?
+- investing a lot in rerank --> alot of improvements but not perfect 
+- JSON data semi-structured with multiple fields 
+	* Works awful with embeddings 
+	* Rerank can help with this but is not perfect, promising! 
+	* Other ranking algorithms too 
+- Embeddings dont have notion of time, hard to encode 
+	* rerank you can filter for time 
+	
+	
+Rerankers 
+- metadata 
+- example: emails --> very problematic for embeddings if you embed them all in same space! 
+		* metadata fields of emails can differ -- not in same vector space? 
+- list wise re-rank with the LLM (e.g. GPT)
+	* send in 100,000 tokens to GPT 
+	* very expensive over time....
+	* many use cases not practical it is very slow 
+
+- What is best system that meets time and money budget?
+
+
+LLM chunking strategies?
+- paper published
+	* contextual information can be missing
+- smarter chunking --> find better boundaries in your data/text 
+- Scaling to wikipedia can be difficult 
+
+Open Source models for "data cleaning"?
+- running your own llama can be more expensive 
+- clean up data --> hallucinations?
+- large corpus size -- how do you ensure hallucination?
+
+
+Vector Quantization
+- scaling is an issue....
+- most vector databases keep embeddings in memory -- if have 1 billion embeddings gets very expensive 
+- how to reduce memory footprint?
+	* Most output float embeddings --> compress --> lose quality
+	
