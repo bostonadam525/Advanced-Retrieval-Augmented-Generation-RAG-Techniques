@@ -32,7 +32,7 @@ Q & A pipeline vs. RAG pipeline - fundamental difference between two?
 - passes result to LLM 
 - returns answer to user
 
-* **Advantages of Q & A agent pipeline:**
+**Advantages of Q & A agent pipeline:**
 - Answers are usually more precise and exact.
 - Queries/questions can be more precise as well.
 - Answers are NOT abstractive as they may be with a RAG pipeline since we are not using vector search.
