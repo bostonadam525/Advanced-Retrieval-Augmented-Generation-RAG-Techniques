@@ -21,7 +21,7 @@ Q & A pipeline vs. RAG pipeline - fundamental difference between two?
 ![image](https://github.com/bostonadam525/Advanced-Retrieval-Augmented-Generation-RAG-Techniques/assets/45008475/2585ab55-4823-4f70-b77d-52dba9ae0b2c)
 
 
-=============================================================================================================================================================================================================================================================================
+=========================================================================
 2. **Q & A pipeline**
 * Goal of Q & A pipeline --> Exact query search in relational database.
     * Note: This is different than a keyword search such as BM25 or sparse vector search.
