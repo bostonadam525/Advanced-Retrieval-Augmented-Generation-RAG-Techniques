@@ -73,3 +73,10 @@
             * text classification
     * Resources for AWS bedrock
          * [AWS bedrock LLM evals](https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-programmatic.html)
+
+6. SentenceTransformers Distance Metrics
+   * If you are usng SBERT embeddings, it is important to know and consider whether or not the distance metrics you are using apply to your data.
+   * Cosine similarity is not always the metric to use as it only considers direction.
+   * Dot Product is used when you need magnitude and direction. Same with Euclidean Distance.
+   * Resource:
+      * [SBERT Distance Metrics for evaluation](https://osanseviero.github.io/hackerllama/blog/posts/sentence_embeddings/#distance-between-embeddings)
