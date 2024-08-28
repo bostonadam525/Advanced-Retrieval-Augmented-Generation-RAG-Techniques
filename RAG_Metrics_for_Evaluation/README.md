@@ -14,7 +14,7 @@
    * Importance weighting
    * Baseline rescaling
    * Resources for BERTScore
-     * (Simple Examples)[https://medium.com/@abonia/bertscore-explained-in-5-minutes-0b98553bfb71]
+     * [Simple Examples](https://medium.com/@abonia/bertscore-explained-in-5-minutes-0b98553bfb71)
 3. BLEU Score
 4. RAGAS
 5. DeepEval
