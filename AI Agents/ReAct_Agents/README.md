@@ -29,3 +29,8 @@ Example:
   * Wikipedia tool returns answer to agent.
   * Answer sent to LLM for "reasoning".
   * RESPONSE given to user. 
+
+
+# Using LangGraph
+* Most real-world complex agentic architectures use workflows involving several iterative steps and loops. 
+* LangGraph allows you to easily model and use a directed graph with edges. 
