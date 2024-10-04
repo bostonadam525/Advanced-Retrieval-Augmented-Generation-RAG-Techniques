@@ -33,4 +33,36 @@ Example:
 
 # Using LangGraph
 * Most real-world complex agentic architectures use workflows involving several iterative steps and loops. 
-* LangGraph allows you to easily model and use a directed graph with edges. 
+* LangGraph allows you to easily model and use a directed graph with edges.
+
+![image](https://github.com/user-attachments/assets/ea82e9a6-798d-4289-ba2b-dede32232036)
+
+
+* Built on top of LangChain
+* Allows creation of cyclical graphs essential for AI agents powered by LLMs
+* Interface inspired by the NetworkX Library
+* Enables coordination and checkpoints of multiple chains or actors through cyclical computational steps.
+
+## Agentic Workflows with LangGraph
+* LangGraph treats Agentic workflows as a cyclical Graph structure
+* Main features:
+    * Nodes —> functions or LangChain runnable objects such as tools.
+    * Edges —> specify directional paths between nodes.
+    * Stateful Graphs —> manage and update state objects while processing data through nodes.
+* LangGraph leverages these features to create cyclical LLM call executions with state persistence which is often required for AI agents
+
+## Multi-agent workflows with LangGraph
+* Multi-agent workflows involve multiple independent agents powered by LLMs connected in a specific way. 
+* Each agent can have:
+    * Prompt
+    * LLM
+    * Tools 
+    * Other custom code
+* All of these components allow the agents to collaborate with other agents as needed. 
+* LangGraph makes each agent a NODE in a graph.
+    * Control flow is managed by edges
+    * Edges communicate by adding to graph’s state
+
+## How do you choose the BEST LLM to use with your Agents?
+* Go to the [Berkeley Function Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html)
+
