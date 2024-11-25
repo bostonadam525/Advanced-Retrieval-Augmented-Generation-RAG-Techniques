@@ -1,6 +1,6 @@
 # healthcare demo knowledge graph
 * This is a demo example of how to create a knowledge graph with some fake healthcare data.
-* In this example we create a KG using NEO4J cypher from a raw CSV file.
+* In this example we create a Knowledge graph using NEO4J cypher from a raw CSV file.
 * We can then visualize the graph nodes-entities-relationships in NEO4J as well as query the graph using LangChain.
 
 
