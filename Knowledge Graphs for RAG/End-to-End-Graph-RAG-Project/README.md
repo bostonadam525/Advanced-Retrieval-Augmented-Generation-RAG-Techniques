@@ -4,3 +4,37 @@
 
 ![image](https://github.com/user-attachments/assets/55873fa5-b1e1-4d6d-ac5a-a60c2f3450db)
 
+
+# Application Retriever Flow Concept
+1. User enters query
+2. LLM extracts entities 
+3. Identify entities using knowledge graph
+4. Relevant nodes with neighbors
+5. Flatten information ("information compression")
+6. Results that are passed to LLM for generative AI answer
+
+
+
+# Building a RAG app with knowledge graph
+* This is the process we will use:
+
+1. Obtain Unstructured Data
+2. Extract information/entities
+3. Data integration
+4. Generate a knowledge graph with entities-relationships in NEO4J
+5. Ceate a Vector Storage retrieval system
+6. Vector store
+  * used for keyword search
+  * used for vector search 
+
+## Graph Retrieval Mechanism
+* Integrate the ability for the LLM to access the knowledge graph and the vector store
+LLM synthesizes information from knowledge graph & vector store.
+* This project was inspired by a Udemy Course project
+* Goal is to enhance the accuracy of RAG applications using knowledge graphs. 
+* We will do this:
+  * Get text/documents from Wikipedia about the Roman Empire.
+  * Data Extraction
+  * Data integration
+  * Generate knowledge graph in NEO4J
+  * Generate Vector store/embeddings
