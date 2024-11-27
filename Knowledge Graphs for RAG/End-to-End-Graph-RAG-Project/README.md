@@ -38,3 +38,27 @@ LLM synthesizes information from knowledge graph & vector store.
   * Data integration
   * Generate knowledge graph in NEO4J
   * Generate Vector store/embeddings
+ 
+
+
+# Create virtual environment
+* code to do this: `python -m venv <name of your venv>`
+* activate venv: `source <name of venv>/bin/activate`
+
+
+# Dependencies -- see `kg_requirements.txt` file
+* neo4j
+* python-dotenv
+* langchain
+* langchain-community
+* langchain-core
+* langchain-openai
+* langchain-experimental
+* tiktoken
+* wikipedia
+
+## Install dependencies
+* run this code within the virtual environment: `pip install -r requirements.txt`
+
+
+
