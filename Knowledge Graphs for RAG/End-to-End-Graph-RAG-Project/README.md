@@ -62,3 +62,13 @@ LLM synthesizes information from knowledge graph & vector store.
 
 
 
+# To visualize Graph in NEO4J
+* Once you use the LLMGraphTransformer to extract all entities and nodes from the text, you can visualize the entire knowledge graph in NEO4J using this cypher query: `MATCH (n)-[r]->(m) RETURN n, r, m;`
+* Then if you zoom into the graph in the NEO4J GUI you will see something like this:
+
+![image](https://github.com/user-attachments/assets/d0b458aa-3e37-4a64-93eb-f4e9c833db29)
+
+
+
+
+
