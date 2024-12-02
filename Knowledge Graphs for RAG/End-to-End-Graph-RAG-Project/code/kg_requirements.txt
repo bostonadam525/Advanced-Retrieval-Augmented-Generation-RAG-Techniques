@@ -1,0 +1,9 @@
+neo4j
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-openai
+langchain-experimental
+tiktoken
+wikipedia
