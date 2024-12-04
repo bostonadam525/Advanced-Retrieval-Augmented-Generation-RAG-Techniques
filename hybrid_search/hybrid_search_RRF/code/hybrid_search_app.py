@@ -70,9 +70,9 @@ if query:
 
     # Display results
     for doc in docs:
-        award_type = data.loc[data["message"] == doc.page_content, "award_type"].values[0]
-        award_reason = data.loc[data["message"] == doc.page_content, "award_reason"].values[0]
-        st.write(f"Award Type: {award_type}")
-        st.write(f"Award Reason: {award_reason}")
+        message_type = data.loc[data["message"] == doc.page_content, "message_type"].values[0]
+        message_reason = data.loc[data["message"] == doc.page_content, "message_reason"].values[0]
+        st.write(f"Message Type: {message_type}")
+        st.write(f"Message Reason: {message_reason}")
         st.write(doc.page_content)
         st.write("---")
