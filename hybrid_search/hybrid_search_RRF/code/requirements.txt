@@ -1,0 +1,14 @@
+streamlit
+pandas
+langchain==0.2.0
+langchain-community==0.2.0
+sentence_transformers
+faiss-cpu
+huggingface_hub
+rank_bm25==0.2.2
+#watchdog==3.0.0
+# PyTorch CPU version
+torch
+transformers
+pillow
+python-dotenv
