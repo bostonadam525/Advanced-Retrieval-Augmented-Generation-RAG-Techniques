@@ -46,6 +46,13 @@
   * Examples:
       * Neo4j
       * AWS Neptune
+   
+  * Example of Property Graph (source: Neo4j - https://neo4j.com/blog/rdf-vs-property-graphs-knowledge-graphs/)
+
+![image](https://github.com/user-attachments/assets/ad0ccc7c-e7d3-4004-b6e6-c78fbf79f23d)
+
+
+
 
 2. **RDF (Resource Description Framework) graphs (aka "Triple stores”)**
   * “Subject-Predicate-Object” triple model
@@ -56,6 +63,11 @@
   * Uses SPARQL query language 
   * Triple stores store triples as independent elements, which allows them to scale horizontally but prevents them from rapidly traversing relationships.
       * In order to perform graph queries, triple stores must create connections from individual, independent facts — adding latency to every query.
+   
+  * Example of RDF graph model (source: Neo4j article above)
+
+![image](https://github.com/user-attachments/assets/9a459f91-3cf6-4829-8980-522ec81749b4)
+
 
 3. **Hypergraph**
   * Relationships called “hyperedges” can connect any number of given nodes. 
