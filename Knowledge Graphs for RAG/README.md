@@ -1,5 +1,36 @@
 # Knowledge Graphs for RAG
-* This repo will contain all things related to using Knowledge Graphs for Retrieval Augmented Generation
+* This repo will contain all things related to using Knowledge Graphs for Retrieval Augmented Generation.
+
+
+## What is a Knowledge Graph?
+* A **Semantic Network** of real world entities 
+* As an example, you can have:
+   * Events, Situations, Concepts —> a relationship exists between each of them. 
+* NLP has many use cases of KGs in both classical NLP and modern NLP (e.g. Transformers, Generative AI)
+   * As an example sentence: “Tom Brady is the captain of the New England Patriots.”
+   * We could parse this with NER. model which may be shown as:
+      * **Person: Tom Brady**
+      * **Role: Captain**
+      * **Place: New England**
+      * **Team: Patriots**
+* However, we know there are specific **semantic relationships** for each of these entities and this is where KG’s come into play.
+
+
+## 3 Main Components of a Knowledge Graph
+1. Nodes
+   * Any object, place, person, thing, etc…
+   * Usually a Noun
+
+2. Edges
+   * Defines relationship between Nodes
+
+3. Labels 
+   * While edges represent the connections between nodes, labels describe the type of relationship that exists between them
+
+### Real World Examples of KGs
+* Google Search is based on semantic structural relationships as described by KGs.
+
+
 
 
 ## How do we represent knowledge graphs in code? 
