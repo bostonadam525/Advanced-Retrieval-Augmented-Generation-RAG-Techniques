@@ -40,6 +40,29 @@
 4. Neo4j
 
 
+# Graph DB Architectures
+1. **Property Graphs**
+  * nodes and edge relationships 
+  * Examples:
+      * Neo4j
+      * AWS Neptune
+
+2. **RDF (Resource Description Framework) graphs (aka "Triple stores”)**
+  * “Subject-Predicate-Object” triple model
+  * Most ideal for semantic data integration and knowledge graphs. 
+  * Examples of RDF databases:
+      * AWS Neptune
+      * AllegroGraph
+  * Uses SPARQL query language 
+  * Triple stores store triples as independent elements, which allows them to scale horizontally but prevents them from rapidly traversing relationships.
+      * In order to perform graph queries, triple stores must create connections from individual, independent facts — adding latency to every query.
+
+3. **Hypergraph**
+  * Relationships called “hyperedges” can connect any number of given nodes. 
+  * Allows for ANY number of nodes at either end of a relationship.
+
+
+
 ## Triples in KGs
 * Knowledge graphs are built on Triples
 1. Entities, which represent the data of the organization or domain area.
