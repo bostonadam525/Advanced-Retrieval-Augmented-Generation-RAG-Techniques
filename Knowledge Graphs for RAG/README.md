@@ -2,6 +2,19 @@
 * This repo will contain all things related to using Knowledge Graphs for Retrieval Augmented Generation.
 
 
+## Comparison of RDBMS (Relational Databases) vs. Graph DBs
+
+### RDBMS                           |       Graph DBs
+1. Tables are created               |  1. Graphs are created
+2. Insert Records —> Rows           |  2. Nodes are similar to "records"
+3. Data —> Columns, values          |  3. Data --> Properties and Values
+4. Constraints                      |  4. Constraints are "Relationships"
+  * Primary key                     |      * e.g. Tesla -- owned by --> Elon Musk
+  * Foreign key                     |
+  * Candidate key                   |
+5. Join Queries                     |  5. Traversal Queries
+
+
 ## What is a Knowledge Graph?
 * A **Semantic Network** of real world entities 
 * As an example, you can have:
@@ -44,12 +57,27 @@
 1. **Property Graphs**
   * nodes and edge relationships 
   * Examples:
-      * Neo4j
+      * **Neo4j**
+          * **Advantages of Neo4j**
+              * Flexible schemas is a major advantage!
+              1. Graph Data Model —> Nodes, Relationships, Properties and Values
+              2. Real time insights immediately when graphs are created
+              3. Easy Retrieval —> using Cypher queries 
+              4. Cypher query language —> “Declarative” query language to represent the graph visually 
+                  a. Cypher has human readable queries
+              5. NO JOINS ARE NECESSSARY like in RDMBMS or SQL DBs 
+              6. ACID — supported in Neo4j (as well as RDBMS)
+                  * Atomicity 
+                  * Consistency
+                  * Isolation
+                  * Durability 
+
       * AWS Neptune
    
   * Example of Property Graph (source: Neo4j - https://neo4j.com/blog/rdf-vs-property-graphs-knowledge-graphs/)
 
 ![image](https://github.com/user-attachments/assets/ad0ccc7c-e7d3-4004-b6e6-c78fbf79f23d)
+
 
 
 
