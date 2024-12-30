@@ -4,16 +4,24 @@
 
 ## Comparison of RDBMS (Relational Databases) vs. Graph DBs
 
-### RDBMS                           |       Graph DBs
-1. Tables are created               |  1. Graphs are created
-2. Insert Records —> Rows           |  2. Nodes are similar to "records"
-3. Data —> Columns, values          |  3. Data --> Properties and Values
-4. Constraints                      |  4. Constraints are "Relationships"
-  * Primary key                     |      * e.g. Tesla -- owned by --> Elon Musk
-  * Foreign key                     |
-  * Candidate key                   |
-5. Join Queries                     |  5. Traversal Queries
+### RDBMS                          
+1. Tables are created               
+2. Insert Records —> Rows           
+3. Data —> Columns, values          
+4. Constraints                      
+  * Primary key                     
+  * Foreign key                    
+  * Candidate key                  
+5. Join Queries           
 
+
+### Graph DBs
+1. Graphs are created
+2. Nodes are “records"
+3. Data —> Properties and Values
+4. Constrains are “Relationships”
+   * e.g. Tesla —> owned —> Elon Musk
+5. Traversal queries 
 
 ## What is a Knowledge Graph?
 * A **Semantic Network** of real world entities 
