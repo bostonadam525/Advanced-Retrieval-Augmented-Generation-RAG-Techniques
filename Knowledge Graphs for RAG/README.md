@@ -38,15 +38,17 @@
 
 
 ## 3 Main Components of a Knowledge Graph
-1. Nodes
+1. **Nodes**
    * Any object, place, person, thing, etc…
    * Usually a Noun
 
-2. Edges
-   * Defines relationship between Nodes
+2. **Edges or Relationships**
+   * Defines relationship between Nodes.
+   * Relationships can be **Unidirectional** and/or **Bidirectional**
 
-3. Labels 
-   * While edges represent the connections between nodes, labels describe the type of relationship that exists between them
+3. **Labels or Properties**
+   * While edges represent the connections between nodes, labels describe the type of relationship that exists between them.
+   * Properties usually have **key-value pairs**.
 
 ### Real World Examples of KGs
 * Google Search is based on semantic structural relationships as described by KGs.
