@@ -26,7 +26,7 @@
 1. [ColPali](https://huggingface.co/vidore/colpali)
 2. [Phi-3 Vision](https://huggingface.co/microsoft/Phi-3-vision-128k-instruct)
 3. [LayoutLMv3](https://huggingface.co/microsoft/layoutlmv3-base)
-4. <more to be added>
+4. .....more to be added
 
 
 ## Document Classification
@@ -35,4 +35,4 @@
      * [entity-extractor](https://github.com/huridocs/trainable-entity-extractor)
      * [pdf-doc-layout-analysis](https://github.com/huridocs/pdf-document-layout-analysis)
     
-2. <more to be added>
+2. ....more to be added
