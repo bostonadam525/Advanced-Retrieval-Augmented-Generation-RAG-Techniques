@@ -16,14 +16,16 @@
 4. cdqa (usually use it with BERT or another model)
    * [cdqa](https://github.com/cdqa-suite/cdQA?tab=readme-ov-file) is no longer maintained, so see link below for Haystack
    * [Haystack](https://github.com/deepset-ai/haystack)
-6. [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/)
-7. [PyMuPDF4LLM](https://pymupdf.readthedocs.io/en/latest/pymupdf4llm/)
-8. [LlamaParse](https://github.com/run-llama/llama_parse)
-9. [unstructured.io](https://docs.unstructured.io/welcome)
+5. [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/)
+6. [PyMuPDF4LLM](https://pymupdf.readthedocs.io/en/latest/pymupdf4llm/)
+7. [LlamaParse](https://github.com/run-llama/llama_parse)
+   * [Awesome LlamaParse tutorial](https://www.youtube.com/watch?v=wRMnHbiz5ck&list=PLz-qytj7eIWUWChyIYOWY1DtToKk56ZTE&index=4)
+8. [unstructured.io](https://docs.unstructured.io/welcome)
 
 
 ## Transformers
 1. [ColPali](https://huggingface.co/vidore/colpali)
+   * [Weaviate recipe](https://github.com/weaviate/recipes/blob/main/weaviate-features/named-vectors/NamedVectors-ColPali-POC.ipynb)
 2. [Phi-3 Vision](https://huggingface.co/microsoft/Phi-3-vision-128k-instruct)
 3. [LayoutLMv3](https://huggingface.co/microsoft/layoutlmv3-base)
 4. .....more to be added
