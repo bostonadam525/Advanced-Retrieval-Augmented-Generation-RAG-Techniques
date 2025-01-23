@@ -2,6 +2,29 @@
 * By Adam Lang
 
 
+# Classes of RAG LLM Evaluation Metrics
+1. Qualitative & Ethical Metrics
+   * Assess things such as tone, toxicity, and bias in the generative outputs.
+   * These metrics help determine if the LLM’s output contains harmful, offensive, or inappropriate content.
+    
+2. Use-case metrics
+   * Domain-specific measures that assess how effectively an LLM application accomplishes its intended real-world objectives.
+   * These could include AI policy adherence, which ensures that the output aligns with AI regulations for a particular region, or impact metrics.
+     
+3. Hallucinaton metrics
+   * These are one of the most important metrics as these measure the "correctness" and "factuality" of an LLM response.
+
+* Diagram showing above classes of metrics:
+
+![image](https://github.com/user-attachments/assets/21e6f5b0-5977-4ca5-aa88-430439d53299)
+
+
+* Another view of the classes of evaluation metrics: [source](https://dagshub.com/blog/llm-evaluation-metrics/)
+
+![image](https://github.com/user-attachments/assets/3319ba00-b09f-4c2a-a2aa-e52e45e689fb)
+
+
+
 # Testing LLM Outputs
 * These are a general list of testing frameworks that can be used to automate and manually test LLM outputs.
 1. BERTScore
@@ -80,3 +103,11 @@
    * Dot Product is used when you need magnitude and direction. Same with Euclidean Distance.
    * Resource:
       * [SBERT Distance Metrics for evaluation](https://osanseviero.github.io/hackerllama/blog/posts/sentence_embeddings/#distance-between-embeddings)
+    
+
+# Resources
+* [Evaluation Leaderboards and Frameworks](https://www.shedge.com/05-generative-ai/llm/tools/evaluation-tools/)
+* [How to Evaluate LLM Summarization](https://towardsdatascience.com/how-to-evaluate-llm-summarization-18a040c3905d)
+* [LLM Evaluation Essentials: From LLM-as-a-Judge to Perplexity (Part 1)](https://medium.com/data-analytics-at-nesta/llm-evaluation-essentials-from-llm-as-a-judge-to-perplexity-part-1-04294bfff304#:~:text=LLM%2Das%2Da%2Djudge%3A%20This%20technique%20is%20widely,own%20or%20other%20LLM%20outputs.)
+* [LLM Evaluation Metrics: Benchmarks, Protocols & Best Practices](https://dagshub.com/blog/llm-evaluation-metrics/)
+* [Perplexity for LLM Evaluation](https://www.comet.com/site/blog/perplexity-for-llm-evaluation/)
