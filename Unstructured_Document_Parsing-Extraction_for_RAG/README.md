@@ -18,6 +18,7 @@
    * [Haystack](https://github.com/deepset-ai/haystack)
 5. [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/)
 6. [PyMuPDF4LLM](https://pymupdf.readthedocs.io/en/latest/pymupdf4llm/)
+   * [Unlocking the Secrets of PDF Parsing: A Comparative Analysis of Python Libraries](https://medium.com/@elias.tarnaras/unlocking-the-secrets-of-pdf-parsing-a-comparative-analysis-of-python-libraries-79064bf12174)
 7. [LlamaParse](https://github.com/run-llama/llama_parse)
    * [Awesome LlamaParse tutorial](https://www.youtube.com/watch?v=wRMnHbiz5ck&list=PLz-qytj7eIWUWChyIYOWY1DtToKk56ZTE&index=4)
 8. [unstructured.io](https://docs.unstructured.io/welcome)
