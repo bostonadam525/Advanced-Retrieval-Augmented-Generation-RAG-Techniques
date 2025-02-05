@@ -107,6 +107,7 @@
 
 # Resources
 * [Evaluation Leaderboards and Frameworks](https://www.shedge.com/05-generative-ai/llm/tools/evaluation-tools/)
+* [Fine-Tuning vs Retrieval-Augmented Generation (RAG)](https://medium.com/@heyamit10/fine-tuning-vs-retrieval-augmented-generation-rag-36175d49f4e3)
 * [How to Evaluate LLM Summarization](https://towardsdatascience.com/how-to-evaluate-llm-summarization-18a040c3905d)
 * [LLM Evaluation Essentials: From LLM-as-a-Judge to Perplexity (Part 1)](https://medium.com/data-analytics-at-nesta/llm-evaluation-essentials-from-llm-as-a-judge-to-perplexity-part-1-04294bfff304#:~:text=LLM%2Das%2Da%2Djudge%3A%20This%20technique%20is%20widely,own%20or%20other%20LLM%20outputs.)
 * [LLM Evaluation Metrics: Benchmarks, Protocols & Best Practices](https://dagshub.com/blog/llm-evaluation-metrics/)
