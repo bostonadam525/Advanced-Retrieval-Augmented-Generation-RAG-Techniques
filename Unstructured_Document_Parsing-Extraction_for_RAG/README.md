@@ -38,4 +38,6 @@
      * [entity-extractor](https://github.com/huridocs/trainable-entity-extractor)
      * [pdf-doc-layout-analysis](https://github.com/huridocs/pdf-document-layout-analysis)
     
-2. ....more to be added
+2. ExtractThinker
+   * ExtractThinker is a flexible document intelligence tool that leverages Large Language Models (LLMs) to extract and classify structured data from documents, functioning like an ORM for seamless document processing workflows.
+   * [Link to ExtractThinker repo](https://github.com/enoch3712/ExtractThinker)
