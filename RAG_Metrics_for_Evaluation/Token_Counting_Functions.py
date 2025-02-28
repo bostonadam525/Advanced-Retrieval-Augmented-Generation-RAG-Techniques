@@ -5,7 +5,7 @@
 
 ### 1. Using the `transformers` library (recommended if you're working with transformer-based models):
 
-### iteration # 1 of this script 
+### iteration # 1 of this script ---> working with pandas dataframe
 from tqdm import tqdm
 from transformers import AutoTokenizer
 
@@ -25,7 +25,7 @@ print(df['token_count_text'].value_counts())
 
 
 -------------------------------------------
-## iteration #2 of this script 
+## iteration #2 of this script --> working with raw string text
 
 from transformers import AutoTokenizer
 
@@ -37,6 +37,44 @@ def count_tokens(text, model_name="gpt2"):
 text = "Your text goes here."
 token_count = count_tokens(text)
 print(f"Number of tokens: {token_count}")
+
+
+----------------------------------------------
+## iteration #3 of this script --> if working with hugging face dataset 
+from tqdm import tqdm
+from transformers import AutoTokenizer
+import pandas as pd
+
+# Initialize the tokenizer
+tokenizer = AutoTokenizer.from_pretrained('<model_id_goes_here>')
+
+# Function to count tokens
+def count_tokens(text):
+    return len(tokenizer.encode(text))
+
+# Convert the 'text' column to a Pandas Series
+text_series = pd.Series(train_data['text'])
+
+# Apply the function with a progress bar
+tqdm.pandas(desc="Counting tokens")  # Initialize tqdm for Pandas
+token_counts = text_series.progress_apply(count_tokens) # Use progress_apply on the Pandas Series
+
+# Instead of adding a new column, update the existing 'token_count_text' column
+train_data = train_data.add_column('token_count_text', token_counts.to_list()) # Add the token counts as a new column to the Dataset
+
+
+# Display the token value counts
+print(f"Max tokens: {np.max(train_data['token_count_text'])}") 
+print(f"Max tokens: {np.min(train_data['token_count_text'])}")
+print(f"Std tokens: {np.std(train_data['token_count_text']):.3f}")
+
+# Extract 'token_count_text' as a list
+token_counts = train_data['token_count_text']  
+
+# Calculate the mean
+mean_token_count = np.mean(token_counts)
+
+print(f"Mean token count: {mean_token_count}")
 
 ---------------------------------------------------------
 ### 2. Using a simple whitespace-based tokenization (quick approximation):
