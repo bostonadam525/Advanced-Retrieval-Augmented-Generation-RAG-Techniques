@@ -3,3 +3,4 @@
 * Some of these models include:
     * 1. CLIP
     * 2. BLIP-2
+      3. Amazon Nova
