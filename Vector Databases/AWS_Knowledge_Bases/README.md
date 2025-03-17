@@ -87,3 +87,12 @@
      * Redis
      * Amazon Aurora
      * ...etc..
+
+# Testing the Knowledge Base
+* After your knowledge base is setup and configured, you should test it via the available APIs.
+* As we mentioned above there are 2 APIs to test with: Retrieve, Retrieve and Generate.
+* This is an example of how I tested a knowledge base I setup on AWS using the Retrieve and Generate API.
+  * The first step is to select a foundation model LLM. I chose the Nova Pro model as it is multimodal and the data I was using was multimodal including PDFs with tables, images and text as well as word documents.
+  * The main topic/subject of the documents is "insurance claims". Here is what the result looks like below. We can see that the specific chunks where the answer was synthesized from is cited in the response and you can drill down into each response via the metadata chunks. 
+
+ ![image](https://github.com/user-attachments/assets/bea3d998-e148-4d89-803f-5a00a989d763)
