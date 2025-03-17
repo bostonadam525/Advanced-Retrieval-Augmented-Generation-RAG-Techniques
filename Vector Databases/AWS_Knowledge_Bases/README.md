@@ -34,3 +34,56 @@
 
 ![image](https://github.com/user-attachments/assets/6f26b1d9-8eb2-4023-b5ce-b7fc5d6e34bd)
 
+
+## How to Create a Knowledge Base
+* Navigate to AWS Bedrock.
+* Go to side panel "knowledge bases".
+* Click on "Create".
+* Choose your knowledge base type: Vector Store, Structured Data, or Knowledge Base with Kendra GenAI Index.
+
+![image](https://github.com/user-attachments/assets/f5939697-3700-4d5f-97cf-360c0bc00543)
+
+* Next, name your knowledge base.
+* Add any description as necessary.
+* Either create an IAM role (AWS Bedrock does by default), or use existing one.
+* Next, choose data source(s):
+  * Amazon S3 bucket
+  * Web Crawler
+  * Custom
+  * Confluence
+  * Salesforce
+  * Sharepoint
+* You can also add logging abilities such as AWS Cloud Watch Logs.
+
+
+## AWS Knowledge Base Parsing Strategies
+1. Default Parser
+2. Foundation Models as a Parser
+   * This leverages Anthropics Claude models. The models will analyze your data and decide the right strategy to parse the data.
+   * If you data is multimodal (e.g. PDF, tables, text, images) this is the more ideal parsing strategy.
+
+## AWS Knowledge Base Chunking Strategies
+1. Default Chunking
+   * 300 token chunks is default setting. This is based on average sentence and paragraph lengths.
+
+2. Other Chunking Strategies -- customize tokenization sizing
+   * Fixed Size
+   * Hierarchical
+     * nested chunking (e.g. parent-child format, similar to LlamaIndex)
+     * Semantic search occurs on the child chunks of each parent. However, retrieval will send the parent chunk only.
+     * This approach can introduce noise into your data. 
+   * Semantic
+     * Based on semantic similarity embedding model(s) and specific similarity metric (e.g. cosine similarity, dot product).
+     * Chunk size is based on semantic context. 
+   * No chunking at all!! 1 document will == 1 chunk
+  
+## AWS Knowledge Base - Embeddings and Vector Databases
+* This is the next step in building your knowledge base.
+* You can select a foundation embedding model from AWS Bedrock such as Titan Text Embeddings or Cohere.
+* The next step is to select a vector database to store your vectors. The usual options are:
+  1. Quick Create -- Open Search Serverless instance, AWS Aurora PostgreSQL, AWS Neptune Graph DB (Graph RAG)
+  2. Vector Database Vendor
+     * Pinecone
+     * Redis
+     * Amazon Aurora
+     * ...etc..
