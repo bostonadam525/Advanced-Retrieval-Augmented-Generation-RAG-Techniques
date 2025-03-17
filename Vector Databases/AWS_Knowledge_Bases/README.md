@@ -96,3 +96,8 @@
   * The main topic/subject of the documents is "insurance claims". Here is what the result looks like below. We can see that the specific chunks where the answer was synthesized from is cited in the response and you can drill down into each response via the metadata chunks. 
 
  ![image](https://github.com/user-attachments/assets/bea3d998-e148-4d89-803f-5a00a989d763)
+
+
+# Updating the Knowledge Base
+* You are able to update the knowledge base over time and in real-time as new information and data is available.
+* The simple way to do this by "syncing" your knowledge base source, in this case the S3 bucket with your new data. 
