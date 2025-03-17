@@ -10,6 +10,13 @@
 ![image](https://github.com/user-attachments/assets/c05cb0f0-6690-44c4-9bec-ccbba10d5f98)
 
 
+# Classes of Rerankers
+* These are the most common reranker models used in Generative AI today as outlined by [Galileo](https://www.galileo.ai/blog/mastering-rag-how-to-select-a-reranking-model)
+
+![image](https://github.com/user-attachments/assets/45197cb8-6967-4ebd-b3e1-7764ca0c0578)
+
+
+
 # Bi-encoders vs. Cross encoders
 * While "retrievers" are FAST they are not precise nor the most accurate.
 * The truth is that "rerankers" are MORE accurate than most embedding models even though they are slower.
@@ -70,3 +77,17 @@
   *  user context or dialogue history can help improve the relevance of reranked documents in conversational search or recommendation systems.
 7. **Hybrid Approaches**
   * Multiple approaches combined
+
+
+# Reranker Evaluation Metrics
+1. Relevancy
+   * Common retrieval metrics such as NDCG.
+2. Latency
+3. Speed
+4. [RAG Metrics](https://www.galileo.ai/blog/mastering-rag-how-to-select-a-reranking-model)
+   * Chunk attribution
+   * Chunk utilization
+   * Context Adherence
+   * Completeness
+
+![image](https://github.com/user-attachments/assets/701cdcfa-9f66-4c24-bc6f-173e016221f6)
