@@ -182,7 +182,28 @@
       * [DeepEval github](https://github.com/confident-ai/deepeval)
       * [Unit testing with DeepEval](https://dev.to/shannonlal/unit-testing-llms-with-deepeval-4ljl)
       * [Example using DeepEval](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation#fine-tuning-metrics)
-3. **AWS Automated Evaluation**
+
+3. **Comet Opik**
+   * Open source eval framework.
+   * [Comet Opik github](https://github.com/comet-ml/opik)
+  
+4. **deepchecks**
+   * [deepchecks](https://www.deepchecks.com/)
+
+5. **Langfuse**
+   * Open source LLM observability framework.
+   * [Langfuse github](https://github.com/langfuse/langfuse)
+
+6. **LangSmith**
+   * LangChain's framework for LLM observability.
+   * [LangSmith link](https://www.langchain.com/langsmith)
+
+7. **promptfoo**
+   * open source framework for LLM observability.
+   * [Link to promptfoo](https://www.promptfoo.dev/)
+  
+  
+8. **AWS Automated Evaluation**
     * Pros of AWS eval
        * AWS metrics:
           * Accuracy 
@@ -197,22 +218,26 @@
             * text classification
     * Resources for AWS bedrock
          * [AWS bedrock LLM evals](https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-programmatic.html)
+     
+    * [AWS Refchecker](https://github.com/amazon-science/RefChecker)
 
-4. **SentenceTransformers Distance Metrics**
+9. **SentenceTransformers Distance Metrics**
    * If you are usng SBERT embeddings, it is important to know and consider whether or not the distance metrics you are using apply to your data.
    * Cosine similarity is not always the metric to use as it only considers direction.
    * Dot Product is used when you need magnitude and direction. Same with Euclidean Distance.
    * Resource:
       * [SBERT Distance Metrics for evaluation](https://osanseviero.github.io/hackerllama/blog/posts/sentence_embeddings/#distance-between-embeddings)
 
-5. **NLG-metricverse**
+10. **NLG-metricverse**
    * NLG Metricverse is an end-to-end Python library for NLG evaluation, devised to provide a living unified codebase for fast application, analysis, comparison, visualization, and prototyping of automatic metrics.
    * [NLG-metricverse github](https://github.com/disi-unibo-nlp/nlg-metricverse)
   
 
-6. **Machine Translate.org**
+11. **Machine Translate.org**
    * This isn't a RAG specific framework but a good resource for translation and NLG metrics.
    * [Machine Translation Metrics](https://machinetranslate.org/metrics)
+
+
 
 # Resources
 * [Awesome LLM for NLG Evaluation Papers](https://github.com/chongyangtao/LLMs-for-NLG-Evaluation)
