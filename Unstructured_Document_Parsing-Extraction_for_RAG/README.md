@@ -3,6 +3,13 @@
 * There are numerous techniques, methods, programming packages and various other approaches to parsing unstructured data. Below is not considered a complete list but a growing collection.
 
 
+# Unstructured.io PDF Processing
+* Unstructured.io is just one of many tools that we as Data Scientists have at our disposal for processing complex PDF files.
+* Here is a great [blogpost](https://unstructured.io/blog/how-to-process-pdf-in-python) from unstructured.io where they run through some of their best practices and approaches. There is an excellent diagram that shows a PDF processing pipeline from the blogpost:
+
+![image](https://github.com/user-attachments/assets/bf03fa59-a742-45e6-b5a6-0393b062b460)
+
+
 
 ## Knowledge Graphs
 * [Neo4j PDF to graph](https://neo4j.com/developer-blog/graphrag-llm-knowledge-graph-builder/)
