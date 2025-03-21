@@ -10,13 +10,14 @@
 ![image](https://github.com/user-attachments/assets/bf03fa59-a742-45e6-b5a6-0393b062b460)
 
 
+# Various Techniques for Unstructured Document Parsing
 
-## Knowledge Graphs
+## 1. Knowledge Graphs
 * [Neo4j PDF to graph](https://neo4j.com/developer-blog/graphrag-llm-knowledge-graph-builder/)
 
 
 
-## Python Based Packages/Libraries
+## 2. Python Based Packages/Libraries
 1. [MegaParse](https://github.com/QuivrHQ/MegaParse)
 2. [Docling](https://ds4sd.github.io/docling/)
 3. [Pdf2image](https://github.com/Belval/pdf2image) with or without [Easy OCR](https://github.com/JaidedAI/EasyOCR)
@@ -31,7 +32,7 @@
 8. [unstructured.io](https://docs.unstructured.io/welcome)
 
 
-## Transformers
+## 3. Transformers
 1. [ColPali](https://huggingface.co/vidore/colpali)
    * [Weaviate recipe](https://github.com/weaviate/recipes/blob/main/weaviate-features/named-vectors/NamedVectors-ColPali-POC.ipynb)
 2. [Phi-3 Vision](https://huggingface.co/microsoft/Phi-3-vision-128k-instruct)
@@ -39,7 +40,7 @@
 4. .....more to be added
 
 
-## Document Classification
+## 4. Document Classification
 1. Huridocs
    * This repo has some methods to consider when building a document classifier. They also have other packages that are great for working with PDF data.
      * [entity-extractor](https://github.com/huridocs/trainable-entity-extractor)
