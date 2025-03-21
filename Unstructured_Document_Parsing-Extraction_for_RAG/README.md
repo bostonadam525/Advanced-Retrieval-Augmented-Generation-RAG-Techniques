@@ -9,6 +9,19 @@
 
 ![image](https://github.com/user-attachments/assets/bf03fa59-a742-45e6-b5a6-0393b062b460)
 
+## Partitioning with unstructured.io
+* Unstructured has developed a hierarchy approach to this for PDF documents which vary greatly in quality and complexity.
+  1. Simple cases
+     * Classical NLP extraction techniques are usually enough to extract all text from a document.
+  2. More Advanceed Cases
+     * advanced image-to-text models are required.
+     * These strategies are usually “rule-based” workflows (thus they are “fast”), or “model-based” workflows (slower workflow because it requires model inference, but you get “higher resolution”, thus “hi_res”).
+* Unstructured.io recommends when selecting a partitioning strategy for your files/documents, you need to be mindful of the **quality/speed trade-off**.
+    * As an example, the fast strategy is roughly 100x faster than leading image-to-text models [source](https://docs.unstructured.io/api-reference/partition/partitioning)
+* These are the document partition methods in unstructured.io:
+
+![image](https://github.com/user-attachments/assets/63de699a-ffb7-476d-be71-3d8f549c88c2)
+
 
 # Various Techniques for Unstructured Document Parsing
 
