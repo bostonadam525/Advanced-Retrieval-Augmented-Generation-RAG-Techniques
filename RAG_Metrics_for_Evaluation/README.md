@@ -2,6 +2,11 @@
 * By Adam Lang
 
 
+# RAG Pipeline Evaluation 
+
+![image](https://github.com/user-attachments/assets/e33e51da-ed32-4ca8-b5d1-3cdb36c06bdb)
+
+
 # Classes of RAG LLM Evaluation Metrics
 1. Qualitative & Ethical Metrics
    * Assess things such as tone, toxicity, and bias in the generative outputs.
