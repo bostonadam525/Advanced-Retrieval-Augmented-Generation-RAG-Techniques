@@ -264,6 +264,44 @@
 ![image](https://github.com/user-attachments/assets/47c7fe0b-636d-4bad-8f49-3fcb71d3c861)
 
 
+### 4. Vector Database(s)
+* Various search algorithms depending upon the vector database vendor.
+
+
+### 5. Prompts
+* Prompt templates are a pre-define abstraction often used through APIs such as LangChain or Llama-Index.
+
+
+### 6. RAG Frameworks
+* LangChain vs. Llama-Index is often the debate.
+  * Both frameworks have their advantages and disadvantages.
+  * LangChain is easier and more intuitive "out of the box".
+  * Image below courtesy of NVIDIA.
+
+https://www.marqo.ai/blog/understanding-recall-in-hnsw-search
+
+
+
+* Alternatives
+  * Haystack
+  * Flowise
+ 
+
+### 7. Embedding Models
+* MTEB benchmarks
+* BEIR benchmarks
+* Embedding Types
+  1. Dense Embeddings (e.g. SentenceTransformers)
+  2. Sparse Embeddings (e.g. SPLADE)
+  3. Multilingual
+  4. Rerankers (Cross-Encoders)
+  5. Static Word Embeddings (e.g. Word2Vec, GLoVe)
+  6. Image embeddings
+  7. Graph embeddings
+
+### 8. LLMs
+* Choose your LLM based on your use case(s), data, compute power and scalability (among other things).
+
 
 ---
 # Agent Driven RAG
