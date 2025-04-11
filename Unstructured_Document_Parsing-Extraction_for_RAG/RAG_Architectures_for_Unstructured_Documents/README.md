@@ -208,7 +208,8 @@
 ![image](https://github.com/user-attachments/assets/59ff6306-1bdd-4b6b-b620-37b185dd1f15)
 
 ---
-# Standard RAG
+# Classic RAG
+* **Goal: Semantic Search and Retrieval.**
 * This is an example of a very basic Standard RAG Architecture from NVIDIA.
 * Some of the components we see below:
 1. **Llama-Index**
@@ -229,7 +230,75 @@
 ![image](https://github.com/user-attachments/assets/07cce779-d480-410e-97a2-060ca1d944c2)
 
 
+## Clasical RAG - Ingest & Query Architecture
+* The classical data ingestion and query architecture from NVIDIA is below:
 
+![image](https://github.com/user-attachments/assets/cc036f06-cdee-486d-826c-952d441f8fda)
+
+
+### 1. Classical ETL-Ingestion Pipeline
+* Image courtesy of NVIDIA
+
+1. Data retrieval
+2. Data pre-processing
+   * Cleaning & Wrangling
+   * Splitting & Chunking
+   * Duplicates removal
+3. Data tokenization
+
+![image](https://github.com/user-attachments/assets/ccde4521-7606-41e3-a356-b3ada44ea428)
+
+
+### 2. Embedding Generation
+* Image courtesy of NVIDIA
+
+![image](https://github.com/user-attachments/assets/0a09aa15-4b6a-4440-aa2f-96117961a9b6)
+
+
+### 3. Indexing
+* Image courtesy of NVIDIA
+* The goal is to create indices so that when the data is inserted into a vector database the retrieval process is more efficient.
+* There has been studies done on this that show that the order in which your vectors were indexed and the ultimate order of insertion into a vector database can significantly influence the retrieval results based on the specific retrieval algorithm that you are using in your vector DB (e.g. HNSW).
+* This is must read [blog post](https://www.marqo.ai/blog/understanding-recall-in-hnsw-search) that came from the arxiv paper written by Marqo vector DB. It explains the importance of the insertion order of your vectors and the embedding models used can significantly influence the recall of your system. 
+
+![image](https://github.com/user-attachments/assets/47c7fe0b-636d-4bad-8f49-3fcb71d3c861)
+
+
+
+---
+# Agent Driven RAG
+* **Goal: Agent with tool calling functions is added to the RAG pipeline.**
+* This is an example of agent driven RAG from NVIDIA.
+* Common Types of Agentic RAG:
+1. "Zero-Shot"
+   * This is similar to classic RAG where a "zero shot" query or prompt is sent to the LLM with retrieval.
+   * If the answer is NOT in the vector store, the agent uses the tools it has access to in order to go find the answer.
+
+2. "Chain of Thought RAG" - CoT
+   * This is more closely related to the ReAct framework or "reason and act".
+   * This means that the agent is instructed to "reason and act" to find the correct answer to a query given a series of steps with guidance. 
+
+![image](https://github.com/user-attachments/assets/c8d419c9-2d3c-4678-9b4e-037f044212b3)
+
+
+
+
+---
+# Guardrails RAG
+* **Goal: Guardrails are applied to the pipeline to limit certain answers to queries.**
+* The example below is from NVIDIA using the NVIDIA nemo guardails.
+* There are 3 types of general guardrails that NEMO offers:
+1. Topical guardrails
+   * Prevents specific topics of choice from being answered by the RAG application.
+
+2. Safety guardrails
+   * Prevent unwanted language and responses (e.g. biases, toxicity).
+  
+3. Security guardrails
+   * Prevents access to unwanted 3rd party applications and only allows certain APIs or external applications access.
+
+
+![image](https://github.com/user-attachments/assets/a05ee982-5d08-4f0a-a7a7-9c35f0299cd0)
 
 ---
 # Scalability for RAG Systems
