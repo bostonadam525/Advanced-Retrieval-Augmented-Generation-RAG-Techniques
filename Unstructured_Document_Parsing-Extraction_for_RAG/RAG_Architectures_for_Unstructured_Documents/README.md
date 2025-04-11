@@ -104,6 +104,7 @@
   * With the chunked data, we will augment the prompts (aka RAG).
 
 ##### 1.7 Streaming pipelines vs. batch pipelines?
+* [source for comparing streaming vs. batch](https://medium.com/@remisharoon/batch-vs-streaming-data-pipeline-making-the-right-choice-c08b4d080580)
 * There various reasons why you may want to implement either of these formats such as:
   1. A streaming pipeline with a CDC pattern is the **most efficient way to sync two databases between each other.**
      * This means syncing the "raw data" that is stored in a MongoDB NoSQL database to the Vector Database.
