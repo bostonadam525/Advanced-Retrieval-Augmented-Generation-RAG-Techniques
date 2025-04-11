@@ -206,13 +206,31 @@
 
 ![image](https://github.com/user-attachments/assets/59ff6306-1bdd-4b6b-b620-37b185dd1f15)
 
-
+---
 # Standard RAG
+* This is an example of a very basic Standard RAG Architecture from NVIDIA.
+* Some of the components we see below:
+1. **Llama-Index**
+   * API orchestrator for the entire system which acts as the system router.
+2. Enterprise Data
+   * this can be any multimodal data in a raw data store such as a NoSQL or SQL or Graph DB or in a general knowledge base on AWS.
+3. `E5-large`
+   * this is the embedding model from NVIDIA.
+   * It has been optimized for scalability with `TensorRT`.
+4. Milvus
+   * this is a vector database where the vectorized data has been stored.
+5. Llama-2-Triton
+   * this is the LLM being used in the RAG system.
+   * The LLM has been optimized using the Triton inference server. 
+6. DGX Cloud
+   * this is NVIDIA's native AI based cloud platform where the entire system is deployed.
+
+![image](https://github.com/user-attachments/assets/07cce779-d480-410e-97a2-060ca1d944c2)
 
 
 
 
-
+---
 # Scalability for RAG Systems
 
 
