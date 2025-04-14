@@ -39,7 +39,7 @@
 2. HTM documents
 3. PDF documents
 
-##### 1.3 Feature ETL Database Selection
+##### 1.31 Feature ETL Database Selection
 * The database selected can vary based on your data types and needs.
 * MongoDB is a standard NoSQL document database that has a vector DB version called "Mongo DB Atlas" so this may be a top choice for storing website text and text from PDF documents.
 * However, if you are scraping MULTIMODAL data from websites and other unstructured documents you may want to consider using a different database or databases all together.
@@ -51,6 +51,30 @@
     4. Data Lakes
     5. ...etc...
 * **A key point to remember at this stage of the pipeline is that this is a database to store RAW data BEFORE you create your features, vectors and embeddings. This database is NOT expected to be a vector database as that component comes into the pipeline AFTER feature extraction/selection in the Feature Pipeline. This database is essentially a staging area for raw data.**
+
+##### 1.32 Feature ETL Data Storage
+* There are various data storage techniques and data models for unstructured data.
+* The **Object Document Mapping (ODM)** is a well known technique that maps between an object model in an application and a document database.
+  * Abstracting database interactions through model classes allows the ODM to simplify the process of storing and managing data in a document-oriented database such as MongoDB.
+  * **The Role of Metadata**
+      * Metadata plays a crucial role in object-document mapping by defining how objects and their attributes are translated into documents and fields. 
+      * Metadata can be stored as key-value pairs, annotations, or other structured formats. 
+      * Examples of metadata include:
+        1. Mapping object properties to document fields. 
+        2. Defining the data type of a field. 
+        3. Specifying relationships between objects and their documents. 
+        4. Enabling indexing for faster data retrieval. 
+
+* **How is Metadata used in Object-Document Mapping?**
+  1. **Mapping Objects to Documents**
+    * Metadata is used to define how the properties of an object are mapped to fields within a document.
+    * For example an Employee object with id, name, and salary properties can be mapped to a document with corresponding fields.
+  2. **Specifying Relationships**
+    * Metadata can be used to define relationships between different objects and their documents.
+    * For example, if an Employee object has a reference to a Department object, metadata can define how this relationship is represented in the documents.
+  3. **Customizing Mapping Behavior**
+    * Metadata can be used to customize the mapping behavior, such as defining custom converters for data types or using custom strategies for handling relationships.
+
     
 ##### 1.4 Data Pipeline <-----> Feature Pipeline
 * It is important with any Feature pipeline to have a mechanism setup to communicate updates and changes in your data to the feature pipeline.
