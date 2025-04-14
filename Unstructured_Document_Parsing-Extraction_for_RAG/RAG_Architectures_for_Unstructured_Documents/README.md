@@ -2,6 +2,13 @@
 * A repo devoted to system architecture, design, and implementation of various aspects of RAG pipelines for working with unstructured documents and data sources.
 
 
+## Full end-to-end RAG Pipeline with unstructured data
+* This is an excellent example of an end-to-end pipeline with unstructred data sources (e.g. websites).
+* [Source](https://medium.com/decodingml/i-replaced-1000-lines-of-polling-code-with-50-lines-of-cdc-magic-4d31abd3bc3b)
+* The specific details of each compontent of this pipeline implementation are in the sections below.
+
+![image](https://github.com/user-attachments/assets/9d35a0bd-0a9e-4c75-912f-4cf41fcf31a5)
+
 
 
 
