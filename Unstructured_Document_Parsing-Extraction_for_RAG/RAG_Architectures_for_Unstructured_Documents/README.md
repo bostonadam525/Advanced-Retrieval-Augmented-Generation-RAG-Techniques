@@ -148,13 +148,21 @@
 3. Data Storage
 * The training pipeline will ONLY have access to the feature store, which is where you will store the vector embeddings, in a vector database of choice (e.g. Qdrant, Weaviate, Pinecone, ChromaDB, etc..)
   * This can also be a SQL or NoSQL database that has vector capabilities such as MongoDB Atlas which is NoSQL, or a SQL DB that uses the pgvector add on. 
-* Data will be stored in the Vector Database in 2 collections:
+* Data will be stored in the **Vector Database in 2 collections:**
   * 1. The cleaned data (without using vectors as indexes — store them in a NoSQL fashion).
   * 2. The cleaned, chunked, and embedded data (leveraging the vector indexes of Qdrant)
 
 * The training pipeline needs access to the data in **both formats** as we want to fine-tune an LLM on standard and augmented prompts.
   * With the cleaned data, we will create the prompts and answers.
   * With the chunked data, we will augment the prompts (aka RAG).
+ 
+* Diagram of the 2 "snapshots" of the data [source](https://medium.com/decodingml/sota-python-streaming-pipelines-for-fine-tuning-llms-and-rag-in-real-time-82eb07795b87#d979)
+  * As a reminder the snapshots are:
+    1. Feature data that is Chunked & Embedded data for RAG pipeline
+    2. Feature data that is cleaned but NOT chunked for Fine-tuning the Training Pipeline Models
+   
+![image](https://github.com/user-attachments/assets/96bc0389-c257-4acc-880f-a894dfa9d24b)
+
 
 ##### 1.7 Streaming pipelines vs. batch pipelines?
 * [source for comparing streaming vs. batch](https://medium.com/@remisharoon/batch-vs-streaming-data-pipeline-making-the-right-choice-c08b4d080580)
