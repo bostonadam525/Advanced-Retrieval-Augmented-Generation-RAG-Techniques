@@ -76,13 +76,13 @@
     * Metadata can be used to customize the mapping behavior, such as defining custom converters for data types or using custom strategies for handling relationships.
 
     
-##### 1.4 Data Pipeline <-----> Feature Pipeline
+##### 1.4 Data Pipeline CDC 
 * It is important with any Feature pipeline to have a mechanism setup to communicate updates and changes in your data to the feature pipeline.
 * **"CDC" or "Change Data Capture" Patterns is the most common mechanism used for this.**
   * [see this link](https://superlinked.com/vectorhub/building-blocks/data-sources/data-modality#kAGPz?utm_source=community&utm_medium=blog&utm_campaign=oscourse)
   * A key requirement of data retrieval systems is ensuring the underlying representations (i.e. vector embeddings) accurately reflect the **most up to date source data.**
   * **As underlying data changes – (e.g., product updates, user activities, sensor readings) corresponding vector representations must also be kept current.**
-  * There are various approaches to this such as [source](https://www.qlik.com/us/change-data-capture/cdc-change-data-capture#:~:text=Change%20data%20capture%20(CDC)%20refers,a%20downstream%20process%20or%20system.)
+  * There are various approaches to CDC such as [source](https://www.qlik.com/us/change-data-capture/cdc-change-data-capture#:~:text=Change%20data%20capture%20(CDC)%20refers,a%20downstream%20process%20or%20system.)
     **1. Batch recomputation**
         * Periodically rebuilding all vectors from scratch as the new data piles up.
         * But batch recomputation ignores incremental changes between batches
@@ -102,6 +102,28 @@
         * Changing the source application to trigger the write to a change table and then move it.
         * This reduces database performance because it requires multiple writes each time a row is updated, inserted, or deleted.
 
+* **Where does CDC fit into the overall pipeline?**
+  * CDC's primary purpose is to identify and capture changes made to database data, such as insertions, updates, and deletions.
+  * CDC then logs these events and sends them to a message queue (e.g. RabbitMQ).
+  * This allows other pipeline components to react to the data changes in real time by reading from the queue, ensuring that all application parts are up-to-date.
+  * This is a great breakdown of where CDC fits into the overall pipeline as an "orchestrator". [source](https://medium.com/decodingml/i-replaced-1000-lines-of-polling-code-with-50-lines-of-cdc-magic-4d31abd3bc3b)
+ 
+
+![image](https://github.com/user-attachments/assets/3d781d0b-25af-4ea1-9355-2ac0c2ec5613)
+
+
+* **Why do we even need the CDC pattern?**
+1. **Real-time Data Synchronization**
+   * CDC facilitates near-real-time data integration and syncing.
+
+2. **Highly Efficient Data Pipelines**
+   * Allows incremental data loading, which is more efficient than bulk load operations.
+
+3. **Minimized System Impact**
+   * CDC minimizes the impact on the source system by reducing the need for performance-intensive queries.
+
+4. **Event-Driven Architectures**
+   * Enables event-driven architectures by streaming database events.
 
 
 ##### 1.5 Feature Streaming Ingestion Pipeline
