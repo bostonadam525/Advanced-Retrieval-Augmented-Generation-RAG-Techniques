@@ -400,13 +400,23 @@ https://www.marqo.ai/blog/understanding-recall-in-hnsw-search
 ![image](https://github.com/user-attachments/assets/a05ee982-5d08-4f0a-a7a7-9c35f0299cd0)
 
 ---
-# Scalability for RAG Systems
+# Scalability Challenges for RAG Systems
+1. Memory Challenges (diagram from NVIDIA)
+
+![image](https://github.com/user-attachments/assets/d05dddbc-14f0-4f1c-8192-4fdeccad3ad8)
+
+
+2. Accuracy of models
+3. Data Security
+   * Sensitive data to remote endpoints.
+4. Complexity
+5. Cost
+   * Automated LLM transactions make API calls and token costs unpredictable when scaling.
+6. Innovation Velocity
+   * New models and techniques everyday. 
 
 
 
-
-
-
-
+---
 # References
 1. [End-to-end framework for production-ready LLM systems](https://medium.com/decodingml/an-end-to-end-framework-for-production-ready-llm-systems-by-building-your-llm-twin-2cc6bb01141f)
