@@ -40,3 +40,21 @@
 
 
 # Combining RDF & Property Graphs == Stronger Together!
+
+
+
+
+---
+# RDF Graphs -- Open vs. Closed Source
+
+## Open Source
+1. GraphDB (Ontotext)
+2. rdf4j
+3. blazegraph
+4. jena
+
+## Closed Source (Paid Alternatives)
+1. AllegroGraph
+2. Amazon Neptune
+3. Stardog
+4. Virtuoso
