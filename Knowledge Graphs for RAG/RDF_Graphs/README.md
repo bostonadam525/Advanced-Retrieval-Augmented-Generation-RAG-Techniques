@@ -35,13 +35,53 @@
 3. Choosing the MOST appropriate query language really depends upon the needs of your application(s).
 
 ---
-# RDF vs. (Labeled) Property Graphs
+# RDF vs. (Labeled) Property Graphs (LPGS)
+* LPGs are the most common alternative to RDF (and W3C standards for storing and using data in graphs).
+* The LPG data model is as follows:
+  1. Node properties are stored as **key-value pairs with each node**.
+  2. Edge properties are stored similarly with each edge.
+  3. Before the RDF-star and SPARQL-star extension to the RDF specification, this ability to store edge properties was an advantage of LPGs over the RDF model because earlier RDF syntaxes for representing edge properties were more cumbersome.)
+  4. **Two LPG nodes may have multiple instances of the same edge between them.**
+
+## LPG details
+* Source: Ontotext
+
+1. If a group of nodes in an LPG represent a set of employees, they can each be assigned a label of "Employee", much like assigning them a type or class membership. This is why these graphs are known as "labeled property graphs".
+2. A given node can have multiple labels to indicate that it plays more than one role. (As we'll see, an RDF resource can be an instance of multiple classes.)
+
+3. Instead of URIs, LPGs use internally stored identifiers for their nodes. These are unique within each graph. A given node in one graph may have the same identifier as an unrelated node in another graph, or it may have a different identifier from a node in another graph that represents the same entity.
+
+4. LPG systems include Neo4j and TinkerPop.
+   * An open source version of Neo4j's Cypher query language known as openCypher is one of the inputs of the Graph Query Language (GQL) project. (Don't confuse GQL with the JSON-based GraphQL API query language developed at Facebook that we will discuss later in this course.) GQL is now moving through the process of becoming an ISO standard. No corresponding LPG standards are available for representing instance data, data models, or data quality constraints on graph data.
 
 
+## Advantages of LPGs
+* An advantage of LPGs is that it's easier to implement classic computer science graph algorithms such as finding the shortest path between two nodes.
+  * This is not part of the SPARQL query language standard, but GraphDB does offer **Graph Path Search extensions to SPARQL.**
+  * A related advantage of LPGs for certain applications is **"index-free adjacency"**.
+      * This is the ability for an application to **traverse from one node to another WITHOUT relying on an index.**
+
+## Use Cases of LPGs
+* Often for use cases requiring **graph traversal and related graph algorithms.**
+* The graph model is often developed on a whiteboard as a team decides what should be the nodes, relationships, labels and properties needed in the graph to solve a specific problem.
+* Industry and even company standards are less of an issue.
+  * The graph data model is optimized for specific queries to address specific use cases. This means it can be deployed very quickly.
 
 # Combining RDF & Property Graphs == Stronger Together!
+* The relative strengths of both RDF and LPGs can be complementary.
+* Often times when combining both approaches here is what you will do:
+  1. Model and integrate data from multiple sources into a knowledge graph using RDF and the related standards
+  2. Then export node and edge data to an LPG tool (e.g. Neo4j) to address the types of use cases where LPGs do well.
 
+## Process
+1. **RDF Steps**
+   * The data cleaning, data wrangling, provenance, governance, entity linkage, entity resolution, entity recognition, and lineage done on the RDF side contribute to higher-quality data being loaded into the LPG tool.
+  * In today's LLM world, you can use the `LLMGraphTransformer` from Neo4j/LangChain or the `Property Graph` package from LlamaIndex to build the RDF triples which are then inserted into the LPG or Property graph.
 
+2. **LPG Steps**
+* The LPG application can use relevant portions of the ontologies, taxonomies, and controlled vocabularies maintained by the enterprise or their industry in RDF, making the LPG application less of a graph data silo and more interoperable with other data in the enterprise and their industry.
+* You can then use specific graph based algorithms to search/query the graph and perform Retrieval Augmented Generation using LLMs among other things. 
+  
 
 
 ---
@@ -58,3 +98,8 @@
 2. Amazon Neptune
 3. Stardog
 4. Virtuoso
+
+
+---
+# RDF Triples
+
