@@ -103,3 +103,16 @@
 ---
 # RDF Triples
 
+## What are Triples?
+* Give structure to the semantic relationships in an RDF graph.
+* Triple statement holds the meaning. 
+1. Subject
+2. Predicate
+3. Object
+
+* Resources
+  * These are references in data that link to the Subject, Predicate, Object. 
+
+* Example of a triple in lifesciences, [source](https://pmc.ncbi.nlm.nih.gov/articles/PMC5843793/)
+
+![image](https://github.com/user-attachments/assets/663df5ee-ba98-4a38-84ad-0a3a7d75387b)
