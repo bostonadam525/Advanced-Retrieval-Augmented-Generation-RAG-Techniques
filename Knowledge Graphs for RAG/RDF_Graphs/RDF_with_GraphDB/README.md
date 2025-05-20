@@ -95,3 +95,44 @@ data:OrlandoBloom concepts:hasOccupation concepts:Actor .
 
 ![image](https://github.com/user-attachments/assets/55aae77d-96e0-4a95-b109-6b59a2d6de4c)
 
+
+## RDF Types
+* Types are used to state a resource is an instance of a class.
+* Instance --> `a / rdf:type` --> Class
+* Here is an example:
+  * Instead of this: `data:OrlandoBloom concepts:hasOccupation concepts:Actor .`
+  * We write this: `data:OrlandoBloom a concepts:Actor .
+  * However, the `a` syntax is not ideal. This is why `rdf:type` is more often used instead.
+    * It will look like this: `data:OrlandoBloom rdf:type concepts:Actor .
+  * Here is a full example with `rdf:type`. Notice we added the 3rd `@prefix` line with specific syntax. We also added `rdf:type` to take the place of any previous `concepts:` where Typing would be more semantically better. 
+
+```
+@prefix data: <https://mymovies.com/data#> .
+@prefix concepts: <https://mymovies.com/concepts#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+data:KingdomOfHeaven concepts:hasActor data:OrlandoBloom .
+
+data:OrlandoBloom concepts:isFrom data:UK .
+
+data:OrlandoBloom rdf:type concepts:Actor .
+
+data:OrlandoBloom concepts:actsAs data:Balian .
+
+data:Balian rdf:type concepts:Blacksmith .
+
+data:KingdomOfHeaven rdf:type concepts:Movie . 
+
+data:KingdomOfHeaven concepts:hasRole data:Balian . 
+```
+* This is what results, we can see there are 2 predicates assigned though, so we will have to remove the `hasOccupation` predicate to use the more semantically friendly `type`.
+
+![image](https://github.com/user-attachments/assets/8305634f-a467-4608-b908-b1c2ee1b0c48)
+
+* To fix this we have to re-import to the turtle file as seen here, we can rename the graph if we want but I will keep the same:
+
+![image](https://github.com/user-attachments/assets/266492a0-fb28-4d4d-86c3-0fe7e9dd7cf3)
+
+* Now we can see we ONLY have `rdf:type` as the semantic relationship:
+
+![image](https://github.com/user-attachments/assets/45c4ab1b-a5fb-4584-acb3-63929cd23e07)
