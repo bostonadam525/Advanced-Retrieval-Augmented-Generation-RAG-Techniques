@@ -136,3 +136,33 @@ data:KingdomOfHeaven concepts:hasRole data:Balian .
 * Now we can see we ONLY have `rdf:type` as the semantic relationship:
 
 ![image](https://github.com/user-attachments/assets/45c4ab1b-a5fb-4584-acb3-63929cd23e07)
+
+
+## Turtle Syntax
+* Best practice is to structure turtle code. These are a few important pieces of turtle syntax we will see:
+1. Use semicolons to end multiline statements `;`
+2. Nested related statements are better than multiple single line statements.
+3. When using a comma at the end of the statement the next statement is focused on the current predicate.
+4. Comments are made with a `#` just like in Python or other similar languages.
+* Instead of 3 unique statements as we see below:
+
+```
+data:KingdomOfHeaven concepts:hasActor data:OrlandoBloom .
+data:KingdomOfHeaven rdf:type concepts:Movie . 
+data:KingdomOfHeaven concepts:hasRole data:Balian . 
+```
+
+* A Better syntax is this nested hierarchical structure:
+  * What we can see is we added `rdf:type` and semicolons `;` after each statement.
+  * We also nested the concepts within the original statement so concepts are inherited from `rdf:type`
+  * We also end the statement on a new line with a period `.`
+
+```
+# This is a great movie 
+data:KingdomOfHeaven rdf:type concepts:Movie ;
+                     concepts:hasRole data:Balian ,
+                                      data:Sybilla , 
+                                      data:Baldwin , 
+                                      data:Saladin ;
+                     concepts:hasActor data:OrlandoBloom ;       
+```
