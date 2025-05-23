@@ -166,3 +166,6 @@ data:KingdomOfHeaven rdf:type concepts:Movie ;
                                       data:Saladin ;
                      concepts:hasActor data:OrlandoBloom ;       
 ```
+* Now we get this semantic relationship:
+
+![image](https://github.com/user-attachments/assets/c8cc7b7b-c136-4d5f-8157-9654888fd394)
