@@ -14,5 +14,6 @@
 - prompt sent to Generator (LLM)
 
 <img width="716" height="546" alt="image" src="https://github.com/user-attachments/assets/aa6fd2b3-c794-4cc0-bbda-0ace31beb9d2" />
+
 [source:](https://levelup.gitconnected.com/agentic-ai-patterns-to-boost-your-llm-workflow-d424d25dfdae)
 
