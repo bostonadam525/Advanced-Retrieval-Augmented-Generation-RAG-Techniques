@@ -123,8 +123,16 @@ In a production-ready AI agent architecture, these technologies are stacked into
 - **What makes MCP logical and efficient is that it is modular and reusable across many developmental frameworks.**
 
 ---
-# MCP Architectures
-- 
+# MCP Architectures - How Does it Work?
+- MCP Client and MCP Server communicate
+- The main components are:
+  - Tools
+  - Resources
+  - Prompt Templates
+
+- Example from Anthropic and deeplearning.ai:
+
+<img width="1000" height="529" alt="image" src="https://github.com/user-attachments/assets/5bf518e0-6640-493f-8cc3-3c170d4b315d" />
 
 
 ---
