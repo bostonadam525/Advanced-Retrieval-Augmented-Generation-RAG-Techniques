@@ -39,7 +39,7 @@
 
 ---
 ## Architecture
-- This example is using AgentSpan:
+- This example is using AgentSpan, see docs: https://agentspan.ai/docs/quickstart/
 1. Worker (custom code/functions)
    - tool frameworks
    - business logic
