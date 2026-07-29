@@ -13,8 +13,8 @@
 
 - source: https://huggingface.co/blog/VirtualOasis/agents-vs-workflows-en
 
-## Agentic Design Patterns from Anthropic 
-- These are meant to be approaches to problem solving rather than "set in stone" agentic design patterns. That means they are open to interpretation and may change based on the domain and use case(s).
+## Workflow Design Patterns from Anthropic 
+- These are meant to be approaches to problem solving rather than "set in stone" workflow design patterns. That means they are open to interpretation and may change based on the domain and use case(s).
 - These include but are not limited to:
 
 1. **Prompt Chaining**
@@ -29,9 +29,25 @@
    - INPUT —> COORDINATOR —> multi-sub domain specialty LLMs —> AGGREGATOR —> OUT
   
 4. **Orchestrator-Worker**
-- Very similar to Parallelization. 
-- HOWEVER, complex tasks are broken down dynamically and combined. 
-- INPUT —> ORCHESTRATOR —> multi-sub-specialty LLMs —> SYNTHESIZER —> OUTPUT
+   - Very similar to Parallelization. 
+   - HOWEVER, complex tasks are broken down dynamically and combined. 
+   - INPUT —> ORCHESTRATOR —> multi-sub-specialty LLMs —> SYNTHESIZER —> OUTPUT
+
+
+5. **Evaluator-Optimizer**
+   - LLM output is validated by another LLM
+   - INPUT —> LLM generator —> solution —> LLM evaluator —> OUTPUT
+   - Note: the LLM evaluator can reject the LLM generator solution with feedback and this loop continues until the LLM evaluator accepts the output.
+   - LLM as a judge is the common name for this.
+
+## Agentic Design Patterns from Anthropic
+- By nature these tend to be:
+
+1. Open-ended
+2. Feedback loops
+3. No fixed path
+
+- Most of these run in a continuous loop with tools to achieve a goal or desired outcome. 
 
 
 
