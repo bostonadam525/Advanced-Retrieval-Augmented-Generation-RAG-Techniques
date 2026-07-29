@@ -14,6 +14,25 @@
 - source: https://huggingface.co/blog/VirtualOasis/agents-vs-workflows-en
 
 ## Agentic Design Patterns from Anthropic 
+- These are meant to be approaches to problem solving rather than "set in stone" agentic design patterns. That means they are open to interpretation and may change based on the domain and use case(s).
+- These include but are not limited to:
+
+1. **Prompt Chaining**
+   - Decompose larger task into smaller fixed sub-tasks
+
+2. **Routing**
+   - Direct an input into a specialized sub-task, ensuring separation of concerns. 
+   - Input —> LLM router —>route to another LLM with a specialized domain task —> output 
+
+3. **Parallelization**
+   - Breaking down tasks and running multiple subtasks concurrently. 
+   - INPUT —> COORDINATOR —> multi-sub domain specialty LLMs —> AGGREGATOR —> OUT
+  
+4. **Orchestrator-Worker**
+- Very similar to Parallelization. 
+- HOWEVER, complex tasks are broken down dynamically and combined. 
+- INPUT —> ORCHESTRATOR —> multi-sub-specialty LLMs —> SYNTHESIZER —> OUTPUT
+
 
 
 ---
