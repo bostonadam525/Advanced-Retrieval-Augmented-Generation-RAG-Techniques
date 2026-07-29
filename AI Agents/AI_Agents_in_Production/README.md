@@ -40,7 +40,7 @@
 ---
 ## Architecture
 - This example is using AgentSpan:
-1. Worker
+1. Worker (custom code/functions)
    - tool frameworks
    - business logic
    - can crash anytime!
