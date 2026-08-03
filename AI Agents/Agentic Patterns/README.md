@@ -19,6 +19,13 @@
 
 1. **Prompt Chaining**
    - Decompose larger task into smaller fixed sub-tasks
+   - Goal: Break tasks into steps
+      1. Decompose complex problems
+      2. Modular, manageable subtasks
+      3. Improves accuracy and clarity 
+      4. Enables stepwise debugging
+      5. Promotes use of prompt “modules”
+
 
 2. **Routing**
    - Direct an input into a specialized sub-task, ensuring separation of concerns. 
