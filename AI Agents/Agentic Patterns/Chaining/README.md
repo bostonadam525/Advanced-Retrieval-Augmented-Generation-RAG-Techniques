@@ -1,1 +1,2 @@
-
+# Chaining
+- Various chaining patterns
