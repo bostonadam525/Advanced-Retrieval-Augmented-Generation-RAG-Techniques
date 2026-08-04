@@ -78,3 +78,80 @@
 2. Tool Schema Design --> Name tools, set parameters, define input/output schemas
 3. Context & Memory Mgmt --> Track history, summarize context, manage tokens and limits.
 
+---
+# Memory Types for AI Agents
+- AI agents can use two main memory types:
+  - 1) Session memory (limited to the context window) or Short-Term memory
+    2) Long-term memory (persistent storage using key-value stores, structured graphs, vector stores, or hybrid approaches).
+    3) Working Memory (the reasoning scratchpad -- solves multi-step task execution, complex reasoning chains). 
+    4) Episodic Memory (specific past event recall -- long project continuity)
+    5) Semantic Memory knowledge layer (solves problem of factual accuracy, domain specific expertise -- grounds agents in factual rasoning.)
+
+
+
+## Why Prompt-only context fails
+1. Limited context window size
+2. High prompt cost and latency
+3. No recall after session ends
+4. Leads to repeated user queries
+5. Cannot personalize or adapt
+
+### 1. Session Memory
+- Source: Weights & Biases course on Agentic Engineering
+- Session memory is what you get by default when using any LLM within its natural context window:
+
+- **Advantages:**
+   - Very easy to implement
+   - Agent remembers the entire conversation history (within limits)
+   - Transparent - you can see exactly what the agent knows
+   - Fast access to recent information
+
+- **Limitations:**
+   - Limited by context window size
+   - Increasing costs as conversation lengthens
+   - Growing latency with longer conversations
+   - Memory is lost when the session ends
+   - No continuity between different conversations
+
+- This is why most foundation models and services (e.g. ChatGPT, Claude, Gemini) have implemented features to provide continuity between conversations - users expect their AI assistants to remember them between sessions.
+
+### 2. Long-Term Memory
+- There are a few different types (source: Weights & Biases, see below). When developing agentic systems, architectures and patterns, we need to carefully consider which memory approach or combination of approaches best serve a particualr use case, balancing factors like speed, cost, persistence, and personalization (among others).
+
+1. Key-Value Stores
+   - best for structured, lightweight memory
+   - simple format for storing and retrieving information
+
+2. Structured Graphs
+   - Best for complex and relational representations in the data.
+   - Can model relationships between different pieces of information for better reasoning efforts grounded in fact. 
+
+3. Vector Stores
+   - Perhaps the most popular approach
+   - Leverages semantic similarity search (e.g. cosine similarity, euclidean distance) to load and save memory.
+   - Retrieves info based on similarity to current context. Not necessarily relevance or related -- depends on system design.
+   - Efficient for large amounts of information (RAG driven(
+
+4. Hybrid Approaches
+   - Combines multiple storage methods
+   - Gets "the best of all worlds"
+   - Can use different storage types for different kinds of information
+
+---
+# Memory Management for AI Agents -- Memory as Tools in Agentic Systems
+
+## ONLINE (During Execution)
+1. Retrieval Tools -- relevant information with filters and source tracking.
+2. Update tools -- write back new facts with validation.
+3. Grounded generation -- use retrieved knowledge to anchor outputs
+
+
+## OFFLINE (Post-Execution)
+1. Summarization -- chats and sessions compressed into short memory.
+2. Extraction & Deduplication -- capture facts, remove dedundant information, entity resolution (e.g. same entities that mean the same thing in context)
+3. Consolidation & Clean-up -- organize memories and discard stale data
+
+
+---
+# References
+1. [The 5 Types of AI Agent Memory Every Developer Needs to Know - Part 1](https://dev.to/sreeni5018/the-5-types-of-ai-agent-memory-every-developer-needs-to-know-part-1-52fn)
