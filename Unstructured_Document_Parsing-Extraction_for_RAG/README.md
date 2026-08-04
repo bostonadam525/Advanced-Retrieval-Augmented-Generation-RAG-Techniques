@@ -62,3 +62,25 @@
 2. ExtractThinker
    * ExtractThinker is a flexible document intelligence tool that leverages Large Language Models (LLMs) to extract and classify structured data from documents, functioning like an ORM for seamless document processing workflows.
    * [Link to ExtractThinker repo](https://github.com/enoch3712/ExtractThinker)
+
+
+---
+# Why is Document Processing So Difficult?
+- Our modern world is full of digital document types, but not limited to:
+  - invoices
+  - receipts
+  - contracts
+  - reports
+- All of which are very often stored in various formats including but not limited to:
+  - PDF, JPEG, PNG, PPT, DOCX, XLSX, etc...
+- Unstructured documents are very difficult for computers and AI systems to parse and understand unlike structured or relational database systems. These are docs do not come in formats that are easy to search, analyze or integrate into an automated system without manual parsing and engineering/document processing.
+
+---
+## What really is document processing
+1. Parsing --> Markdown/HTML
+  - Usually this involves parsing information very often stored in PDF or PNG files and converting them into usable formats such as Markdown or HTML.
+  - OCR (optical character recognition) is the most common method used for converting documents from image to text. This directly includes metadata such as coordinates of bounding boxes.
+
+2. Extracting --> JSON
+  - lets say you have an invoice with specific fields and parsing it to JSON format.
+  - JSON provides structured key-value pairs matching user-defined schemas. 
