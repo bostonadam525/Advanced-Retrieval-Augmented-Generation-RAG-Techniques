@@ -72,3 +72,9 @@
 
 [source:](https://levelup.gitconnected.com/agentic-ai-patterns-to-boost-your-llm-workflow-d424d25dfdae)
 
+---
+# Components of Agentic Design Patterns
+1. System Prompt Design --> Define agent behavior, rules, examples, and output formats.
+2. Tool Schema Design --> Name tools, set parameters, define input/output schemas
+3. Context & Memory Mgmt --> Track history, summarize context, manage tokens and limits.
+
