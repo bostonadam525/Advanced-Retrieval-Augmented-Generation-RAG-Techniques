@@ -90,4 +90,75 @@
 * See this [Galileo Blog Post](https://www.galileo.ai/blog/metrics-for-evaluating-llm-chatbots-part-1)
 
 ---
-# 
+# AI Agents vs. Agentic AI — What is the Difference?
+
+
+## AI Agents
+- Refers to software programs designed to perform specific tasks without human intervention and/or with a degree of autonomy. 
+- Advantages of AI Agents
+    - 1) Reduces costs
+    - 2) Reduces complex workflows
+    - 3) Reduces need for complex expensive infrastructure 
+    - 4) Improves system and task efficiency 
+
+
+
+## Agentic AI Systems
+
+- Frameworks where multiple AI agents can collaborate and make decisions independently to achieve a larger goal. 
+- This can be conditional, this can be deterministic. 
+
+
+## Examples
+
+Input —> LLM  —-> output
+
+
+
+Task: 
+- please provide me with recent news for today, August 7, 2026. 
+- What is the current temperature in Boston, MA today? 
+
+LLMs are static trained models that can’t infer on unseen or current data. Which is why agents exist to augment and enhance the model with EXTERNAL sources. 
+- If LLM can’t answer question —> can use agent-tool call to external resource to get the information to answer the question. 
+- Some degree of autonomy for the LLM to know when and how to do this to call external resources: API, database, etc…
+
+
+## How do Agentic AI systems Work? 
+- Broader framework as this uses MULTIPLE AI AGENTS that can communicate to each other to solve problems and achieve goals via orchestration and reasoning. 
+
+### Use Case - YOUTUBE Blog Generator
+- Let’s say I have a collection of YOUTUBE videos and I want to convert them to blogs. 
+- How would we make this into an agentic AI system? 
+
+Architecture of what a person would do below. Now just imagine if we could automate this with multiple agents in an Agentic system that can do this in multiple sub tasks:
+
+Start —> Videos —> script —> content —> title, description, code part, conclusion 
+
+#### Workflow
+
+1. Convert YOUTUBE videos (AI agent) —> Transcript [code] —> LangGraph via YOUTUBE APIs
+2. Transcript —> subtasks (AI agent)
+    1. Title
+    2. Description
+    3. Code part 
+
+#### LangGraph Workflow (DAG - directed acyclic graph)
+
+Input (video URL) —> YT —> transcript —> Blog generating agent —> End 
+Agent 1 —-> Agent 2 —> Agent 3 —> etc…
+
+
+
+#### Simple Workflow Example — Automate with LangGraph
+
+Start —> Play —> Tennis or Basketball —> End 
+
+Key points
+1. Each action is a NODE (Python functions) —> Task
+2. EDGEs connect NODEs (Conditional logic)
+3. State schema
+4. State graph —> entire structure of entire graph
+
+
+<img width="2060" height="4166" alt="image" src="https://github.com/user-attachments/assets/bbd1a47f-330a-498f-a527-3e48db6c65a6" />
