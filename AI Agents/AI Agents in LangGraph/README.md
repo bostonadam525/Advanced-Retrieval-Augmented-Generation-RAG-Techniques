@@ -16,9 +16,20 @@
 
 * LangGraph also allows us to define flows that involve cyles that are essential for most agentic architectures which differentiates it from DAG-based solutions. 
   * DAG is a Directed Acyclic Graph, a type of graph whose nodes are directionally related to each other and don’t form a directional closed loop.
-  * A knowledge graph or graph database is a DAG, while LangGraph is similar it is a bit different. 
+  * A knowledge graph or graph database is a DAG, while LangGraph is similar it is a bit different.
+
+ ---
+ ## 10 LangGraph Concepts every AI Engineer Should KNOW!
+ - This image is courtesy of the AI Anytime YouTube Channel, all credit goes to him.
+   - Source:https://github.com/AIAnytime/10-langchain-langgraph-concepts/blob/main/concepts.jpeg
+   - Video: https://www.youtube.com/watch?v=jsT437atPvU
+ - Image from above sources:
+
+<img width="1535" height="1024" alt="image" src="https://github.com/user-attachments/assets/6321ada7-0c69-4b05-b25c-aef3f18a7770" />
 
 
+
+ ---
 ## Why LangGraph?
 1. **Simplifies development of mulit-agentic frameworks**
   * State Management
