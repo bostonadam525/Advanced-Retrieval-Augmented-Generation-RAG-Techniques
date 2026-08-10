@@ -6,7 +6,7 @@
 2. ReAct patterns
 3. Memory in LangGraph
 4. Streaming
-5. ...tbd
+5. Human In the Loop
 
 --- 
 # Tools
@@ -33,4 +33,7 @@
 ## Example stream() vs. astream()
 
 <img width="2030" height="969" alt="image" src="https://github.com/user-attachments/assets/cc47581a-9c7c-4f9f-a53f-6bedee3a31c9" />
+
+---
+# Human in the Loop
 
