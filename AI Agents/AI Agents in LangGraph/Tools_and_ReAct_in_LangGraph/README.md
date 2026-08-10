@@ -36,4 +36,8 @@
 
 ---
 # Human in the Loop
+- Lets you provide human oversite to the graph. 
+- Docs: https://docs.langchain.com/oss/python/langchain/human-in-the-loop
+
+<img width="1927" height="1160" alt="image" src="https://github.com/user-attachments/assets/c9bb135a-1196-4793-8a19-cba3a8580cf7" />
 
