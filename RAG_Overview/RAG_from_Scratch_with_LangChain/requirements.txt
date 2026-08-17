@@ -1,0 +1,10 @@
+langchain
+langchain_core
+langchain_community
+pypdf
+pymupdf
+sentence-transformers
+faiss-cpu
+chromadb
+langchain-text-splitters
+rank-bm25
