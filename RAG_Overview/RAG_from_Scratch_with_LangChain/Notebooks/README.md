@@ -12,3 +12,8 @@
     - Notebooks
 - run: `uv add ipykernel`
 - always maker sure to select the kernel when running jupyter notebooks.
+
+
+---
+### Data 
+- For the PDF example I downloaded, ingested, and created embeddings of a free PDF copy of the book "The History of India" second edition by John McLeod.
