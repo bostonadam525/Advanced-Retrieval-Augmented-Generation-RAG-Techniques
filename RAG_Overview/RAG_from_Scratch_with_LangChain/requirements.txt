@@ -8,3 +8,5 @@ faiss-cpu
 chromadb
 langchain-text-splitters
 rank-bm25
+langchain-groq
+python-dotenv
