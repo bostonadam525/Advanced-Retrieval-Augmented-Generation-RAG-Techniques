@@ -8,5 +8,7 @@
 
 
 ## Setup
+- Make sure to add `typesense` to requirements.txt file. Also, make sure to run in git bash or command prompt: `uv add typesense`
 - Create a free account.
-- Launch free cluster.
+- Launch free cluster (takes about 4-5 minutes).
+- Next, need to create free API keys. 
