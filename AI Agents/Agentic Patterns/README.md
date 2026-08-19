@@ -12,11 +12,13 @@
 2. **Sub Agent Patterns**
 - The "main agent" handles most tasks but hands off specific tasks to other agents.
 
-<img width="880" height="273" alt="Agentic patterns commonly used" src="https://github.com/user-attachments/assets/f3e4e541-f970-40e2-813d-2b2d06349d06" />
+<img width="926" height="851" alt="sub agent patterns" src="https://github.com/user-attachments/assets/5216b65a-9786-44f7-b20e-88826deabd06" />
+
 
 
 3. **Orchestrator Agent Pattern**
 
+<img width="885" height="684" alt="orchestrator agent" src="https://github.com/user-attachments/assets/c1e1f50c-d6bb-4e18-aa69-0cd11b2918cb" />
 
 
 
