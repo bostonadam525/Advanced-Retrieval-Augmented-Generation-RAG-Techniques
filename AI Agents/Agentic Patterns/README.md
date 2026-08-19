@@ -3,6 +3,35 @@
 - I will use multiple resources for this, but the main core resource is this excellent course from neural-maze on agentic design patterns: https://github.com/neural-maze/agentic-patterns-course
 
 ---
+# Agentic Patterns Commonly used
+1. **Single Agent Patterns**
+
+<img width="880" height="273" alt="Agentic patterns commonly used" src="https://github.com/user-attachments/assets/1094828a-f1c4-4b3f-990d-adee883fb3c4" />
+
+
+2. **Sub Agent Patterns**
+- The "main agent" handles most tasks but hands off specific tasks to other agents.
+
+<img width="880" height="273" alt="Agentic patterns commonly used" src="https://github.com/user-attachments/assets/f3e4e541-f970-40e2-813d-2b2d06349d06" />
+
+
+3. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 # Anthropic 2024 Paper
 - In their [2024 paper, Anthropic defined Agents as 2 things](https://www.anthropic.com/engineering/building-effective-agents): 
 
