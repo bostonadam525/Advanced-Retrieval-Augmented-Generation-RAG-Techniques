@@ -15,7 +15,10 @@
 <img width="880" height="273" alt="Agentic patterns commonly used" src="https://github.com/user-attachments/assets/f3e4e541-f970-40e2-813d-2b2d06349d06" />
 
 
-3. 
+3. **Orchestrator Agent Pattern**
+
+<img width="880" height="273" alt="Agentic patterns commonly used" src="https://github.com/user-attachments/assets/1637bd85-267a-40d9-9039-08d4529d03aa" />
+
 
 
 
