@@ -37,3 +37,10 @@
          * A recursive retrieval is performed as the next step is to go back to the original dictionary or hash map that stored the summaries and determine the modality that these relevant chunks came from: image, text and/or tables.
          * The final result is to then retrieve those modalities, so for example this could be an image and text and pass this to a Multimodal LLM to give the answer.
          * This is a case where a multimodal LLM is necessary as the result may be multimodal. 
+
+
+
+---
+# Resources
+1. [NVIDIA Video Search Agents](https://developer.nvidia.com/blog/transform-video-into-instantly-searchable-actionable-intelligence-with-ai-agents-and-skills/)
+2. [Build a Video Search and Summarization (VSS) Agent - NVIDIA](https://build.nvidia.com/nvidia/video-search-and-summarization)
