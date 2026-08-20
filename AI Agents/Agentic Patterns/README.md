@@ -188,3 +188,6 @@
 ---
 # References
 1. [The 5 Types of AI Agent Memory Every Developer Needs to Know - Part 1](https://dev.to/sreeni5018/the-5-types-of-ai-agent-memory-every-developer-needs-to-know-part-1-52fn)
+2. [NVIDIA - Autonomous AI Agents](https://www.nvidia.com/en-us/glossary/ai-agents/)
+3. [NVIDIA - AI Reasoning with Agents](https://www.nvidia.com/en-us/glossary/ai-reasoning/)
+4. [NVIDIA - Nemotron Models](https://build.nvidia.com/models?q=nemotron)
