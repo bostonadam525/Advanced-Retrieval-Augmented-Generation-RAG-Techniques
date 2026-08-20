@@ -191,3 +191,4 @@
 2. [NVIDIA - Autonomous AI Agents](https://www.nvidia.com/en-us/glossary/ai-agents/)
 3. [NVIDIA - AI Reasoning with Agents](https://www.nvidia.com/en-us/glossary/ai-reasoning/)
 4. [NVIDIA - Nemotron Models](https://build.nvidia.com/models?q=nemotron)
+5. [NVIDIA - Spotlight: xpander AI Equips NVIDIA NIM Applications with Agentic Tools](https://developer.nvidia.com/blog/spotlight-xpander-ai-equips-nvidia-nim-applications-with-agentic-tools/)
