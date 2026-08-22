@@ -40,3 +40,4 @@
 - [Advanced Indexing Techniques in RAG Systems: Beyond Basic Chunking](https://medium.com/@gauravbansalutd/advanced-indexing-techniques-in-rag-systems-beyond-basic-chunking-ea6a84e4627c)
 - [Advanced Indexing Techniques in RAG Systems: Beyond Basic Chunking | Part II](https://medium.com/@gauravbansalutd/advanced-indexing-techniques-in-rag-systems-beyond-basic-chunking-part-ii-0d5e190c7a57)
 - [What is RAG Indexing?](https://www.analyticsvidhya.com/blog/2025/11/what-is-rag-indexing/)
+- [A Systematic Review of Key Retrieval-Augmented Generation (RAG) Systems: Progress, Gaps, and Future ](https://arxiv.org/html/2507.18910v1)
