@@ -1,10 +1,23 @@
 # Memory in LangGraph
 - See LangGraph docs: https://docs.langchain.com/oss/python/concepts/memory
 
+---
+# Three Types of Working & Short-Term Memory for AI Agents
+- This acts as a temporary scratchpad for active tasks and immediate conversation context.
+
+## 1. Context Window Buffer
+- The active memory space where the model processes current text; it vanishes completely once a chat session is closed.
+
+## 2. Sliding Window Memory
+- A technique that retains only the last few turns of a conversation to keep processing costs low and prevent the system from getting overwhelmed.
+
+## 3. Summarized Memory
+- A method where an AI agent actively condenses older parts of a conversation into short summaries to preserve context without wasting token space.
 
 
 ---
-# Three Types of Memory for AI Agents
+# Three Types of Long-Term Memory for AI Agents
+- This permanently saves information outside the model's core workspace so it can be recalled days, weeks, or months later.
 
 ## 1. Semantic Memory
 - **What it is:** storing FACTS
