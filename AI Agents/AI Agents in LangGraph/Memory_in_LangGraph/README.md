@@ -1,4 +1,5 @@
 # Memory in LangGraph
+- See LangGraph docs: https://docs.langchain.com/oss/python/concepts/memory
 
 
 
@@ -25,3 +26,29 @@
 - Source: "Long-Term Agentic Memory with LangGraph" course from deeplearning.ai
 
 <img width="763" height="429" alt="image" src="https://github.com/user-attachments/assets/3e9e1f60-6148-478e-80fe-7d99e31b8d41" />
+
+- There are 2 general paradigms for MEMORY INTERACTION:
+
+1. **"In the hot path"**
+   - This is all at once interaction or "all in one go".
+   - **Pros:** Single agent does everything (update memories + respond to users)
+   - **Cons:** too much work for 1 agent to do by itself, adds latency to response
+
+2. **"In the background"**
+   - In a separate process
+   - **Pros:** Two agents to do work: 1 to update memory, 1 to respond
+   - **Cons:** Latency increases to respond
+
+---
+# Example: Email Agent
+- Here we will work with the 3 types of memory
+- They will be implemented in different parts of the DAG. 
+1. Semantic Memory -- Memory Tool for agent to use
+2. Episodic -- few shot examples added to the prompt
+3. Procedural -- Calendar + Writing tool: SYSTEM PROMPTS
+
+- The example below is from the deeplearning.ai course "Long-Term Agentic Memory with LangGraph"
+
+<img width="763" height="429" alt="image" src="https://github.com/user-attachments/assets/b9bfdfa9-a5a9-4c26-8b64-c5d666cdcc70" />
+
+
