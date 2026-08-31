@@ -14,3 +14,6 @@
 
 ---
 ## System Architecture
+- System diagram on AWS
+
+<img width="1194" height="1305" alt="AWS RAG chatbot architecture" src="https://github.com/user-attachments/assets/1299b4da-9159-42ae-be93-940db97588a4" />
