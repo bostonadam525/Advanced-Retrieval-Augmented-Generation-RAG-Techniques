@@ -29,6 +29,17 @@ def main():
 - **key points:**
   - difference here is that using ASYNC the code in `def main()` can execute without having to wait for the `def fetch_data()` code tasks to complete.
 
+---
+# Parallelism vs. Concurrency
+
+
+## Parallelism
+- running multiple tasks simultaneously
+- multiple tunnels or processes
+
+
+## Concurrency
+- managing multiple tasks that can start, run, and finish with overlapping times.
 
 
 ---
