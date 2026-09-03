@@ -82,3 +82,83 @@ Additional content...
 [source: faq.md]
 FAQ content....
 ```
+---
+# Document Loaders
+- Typical raw files:
+  - pdf
+  - txt
+  - html
+  - docx
+  - csv
+
+- LangChain Document Loaders can load these files and create objects:
+
+```
+List[Document]
+- `page_content` -- the actual text content
+- `metadata` -- source, page, author, etc...
+
+
+
+```
+## Core Document Loaders in LangChain
+- PyPDFLoader -- PDF files
+- TextLoader -- Plain text
+- DirectoryLoader -- multiple files stored in a specific directory
+- WebBaseLoader -- web pages
+- UnstructuredLoader -- more complex "mixed" document types (e.g. markdown, json, etc.)
+
+- In code this is:
+
+```
+## load source document --> init loader function to load the docs
+loader = Loader(source) --> docs = loader.load()
+
+```
+## PDF loading options
+1. **PyPDFLoader**
+   - Fast, basic PDF extraction out of the box
+   - Speed: Good
+   - Metadata: Basic
+   - Use case: Simple PDF files
+  
+2. **PyMuPDFLoader**
+   - Fastest, good for metadata
+   - Speed: BEST
+   - Metadata: RICH
+   - Use case: HIGH VOLUME PDF files/workloads
+  
+3. **UnstructuredPDFLoader**
+   - Best for COMPLEX layouts
+   - Speed: SLOWER
+   - Metadata: DETAILED
+   - Use Case: Tables & Layouts
+
+## Web Loading options
+1. **Single URL**
+
+```
+https://example.com --> WebBaseLoader --> Document
+```
+
+2. **Multiple URLs**
+
+```
+example.com/page1                        Document[0]
+example.com/page2  --> WebBaseLoader --> Document[1]
+example.com/page3                        Document[2]
+
+```
+## Directory Loading
+- Example -- load an entire directory of files:
+
+```
+docs/
+   report.pdf
+   notes.txt                 DirectoryLoader                              Doc report.pdf
+   data.csv         --->    path            "docs/"                --->   Doc guide.pdf
+   guide.pdf                glob            "**/*.pdf"                    Doc summary.pdf
+   readme.txt               loader_cls      PyPDFLoader
+   summary.pdf
+```
+- The glob pattern filters the files. We use `"**/*.pdf"=all` for PDFs in all subdirectories. 
