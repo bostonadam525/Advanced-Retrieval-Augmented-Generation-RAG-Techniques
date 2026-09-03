@@ -84,6 +84,7 @@ FAQ content....
 ```
 ---
 # Document Loaders
+- See LangChain docs: https://reference.langchain.com/python/langchain-community/document_loaders
 - Typical raw files:
   - pdf
   - txt
