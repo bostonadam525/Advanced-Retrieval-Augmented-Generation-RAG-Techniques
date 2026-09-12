@@ -1,5 +1,13 @@
 # Agentic System Architectures
 
+---
+# What are AI Agents?
+- Systems with a specific goal that can do the following:
+1. **Perceive**: Recognize user's speech, image or text input.
+2. **Decide**: Evaluate options to solve the users input based on user preferences.
+3. **Act:** Generate a response or take a specific action on a disease, diagnosis, or financial plan.
+4. **Automation:** automate repetitive tasks in decision making and problem solving.
+5. **Multi-agent systems**: multiple agents working together in orchestration. 
 
 ---
 ## Autonomous Agents
@@ -32,17 +40,18 @@
    - Example: measure of utility can be a measure of customer satsifaction
 
 ---
-# Agentic "Internal Monologue" + Behavioral Design Patterns
-- Chain of Thought/ReAct --> System prompts tell LLM to carry out internal monologue/internal LLM processing
-- Reflection pattern --> focused purely on model's output
+# Key Components of AI Agents
+- As we know from above AI Agents at a high level can/should:
+  - Perceive
+  - Decide
+  - Act
+- Professor Andrew Ng says the key components of agents are:
 
-## 1. Chain-of-Thought
+1. Reflection
+2. Tool Use
+3. Planning
+4. Multi-agent collaboration
 
-
-## 2. ReAct
-
-
-## 3. Reflection
 
 
 
