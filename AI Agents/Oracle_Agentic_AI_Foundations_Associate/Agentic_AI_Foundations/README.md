@@ -151,13 +151,218 @@ Observe --> Reason --> Act --> Observe again
 
 ---
 ## 3 - Loops Orchestration or "Agent Nervous System"
-- Acts as a router for the entire body system.
-- These are the main components
+- Acts as a router for the entire body system -- the operating system!
+- **The loop is the conductor of the symphony orchestration**
+- These are the main components:
 
 1. **Loop Management**
-   - `Think-Act-Observe cycle` is run by this (entire "reasoning cycle")
+   - `Think-Act-Observe cycle` is run by this (entire "agent reasoning cycle")
    - It knows when to continue --> pause --> or stop.
 
 2. **Reasoning Strategy**
-   - 
+   - Applies CoT, ReAct or other prompt techniques to break goals into granular steps.
+  
+3. **Memory Management**
+   - Short-term scratchpad for current session
+     - Query stored
+     - History
+     - Documents
+     - Knowledge bases/sources
+  - All is stored for long-term context
+
+4. **Tool Routing**
+   - Selects which tools to call
+   - Formats the tool calls
+   - Handles errors
+   - Returns results back to LLM reasoning loop
+  
+5. **State Machine**
+   - Tracking where in the planning the agent is.
+   - Detects completion, loops, and failures.
+  
+6. **Safety & Guardrails**
+   - This is usually hard-coded logic/policy rules that will override any LLM model reasoning when necessary to prevent hallucinations and fabrications.
+---
+# Reasoning Patterns
+- These are very important for the reasoning component of agents.
+- **There are 3 main reasoning frameworks:
+
+## 1. **Chain-of-Thought (CoT)**
+   - **What it does:** CoT breaks problems into sequential chains of intermediate reasoning steps before arriving at a conclusion. (e.g. "think step by step")
+   - **When to use:**
+     - Math
+     - Logic
+     - Step-by-step analysis
+
+### CoT - Thinking Step by Step
+- CoT is a well known prompting technique rather than an agentic pattern.
+- **CoT alone does not make a model "smarter" but rather helps it use its reasoning capabilities in a more reliable manner.**
+- **Core Concept:**
+  - Instructs LLM to reason step-by-step BEFORE answering the user query or task.
+  - Significantly improves accuracy on more complex tasks (e.g. math)
+  - **Transparency!! (you can actually see the step by step reasoning)**
+  - **Debugging!! (can actually see where reasoning/process went awry in the step by step process)**
+  - **Variants of CoT:**
+    - Zero-shot CoT: adding "lets think step by step" to any prompt.
+    - Few-shot CoT: including specific examples of how to think step by step.
+
+### CoT - limitations for Agents
+- Only uses internal knowledge -- is NOT able to look up information.
+- So, if the models internal knowledge is wrong or outdated, it can/will reason incorrectly with confidence (hallucinate/fabricate).
+- **NOT able to self-correct vs. external reality or real-world data.**
+- **NOT able to take actions in the real world.**
+   
+### Why CoT limitations are important for Agents?
+- The limitations of CoT led to the ReAct framework!
+- CoT gives agents the ability to "think" --> but we know CoT thinking using the model's own internal knowledge base as its foundation is not enough, it needs to be able to ACT on real-world data and tasks.
+- **ReAct pattern == CoT + Tool use in loop**
+  - Today's reasoning models (e.g. o1, DeepSeek, etc.) use CoT internally
+
+---
+## 2. **Reason + Acting (ReAct)**
+   - **What it does:** Uses **reasoning/thought** with **actions** and **observations**. Intermediate reasoning is crucial for agents to determine how/when to act.
+   - **When to use:**
+     - Tool selection (which tool to use and why)
+     - Multi-step tasks/workflows
+     - External API calls
+  - **In production, most Agents use ReAct frameworks - why?**
+     - Balances transparency, capability, and cost.
+
+### ReAct = CoT + Acting in loop
+- Solves fundamental problem of CoT not having access to real-world data.
+- ReAct bridges CoT reasoning to real world data and tasks.
+
+### Why does ReAct work? 
+- Model reasoning traces reveal and make **transparent** an agent's logic making it debuggable and more understandble.
+- External tool use will ground the reasoning in real-world data --> can reduce hallucinations and fabrications
+- Interleaved format prevents model from "making up" answers when it should look things up.
+- **ReAct outperforms BOTH CoT-only and Action-only approaches on QA and decision-making benchmarks.**
+
+
+
+## 3. **Tree-of-Thoughts (ToT)**
+   - **What it does:** Explores multiple reasoning branches at the same time similar to a search tree. This is a popular prompt framework.
+   - Each "thought" is then evaluated before the agent decides which branch of the tree to focus on.
+   - **When to use:**
+     - Creative tasks/workflows
+     - Strategic planning
+     - Exploration
+     - Research
+
+
+---
+# Agent Frameworks
+- Its important to know about these frameworks below. While LangGraph is the most popular and most heavily adapted, it is not the only framework you can use and this may depend on your infrastructure, domain, and data.
+
+1. **LangChain/LangGraph**
+   - largest agentic ecosystem
+   - graph-based + stateful workflows
+   - **When to use**: production systems needing flexibility in development with stateful systems
+   - **Weakness:**
+     - can be overengineered for simple tasks
+     - multiple abstraction layers --> more complex
+     - multiple package dependencies in langchain ecosystem
+  
+2. **Open AI Agents SDK**
+   - you can define agents and orchestrate multi-agent workflows (based off the OpenAI Swarm)
+   - **When to use:** OpenAI Agent Stack, Built-in Tracing, Guardrails, multi-agent systems
+   - **Weakness**: less flexible than LangGraph for orchestration
+
+3. **CrewAI**
+   - Role-based multi-agent teams, very intuitive design and code
+   - **When to use:** Workflows that simulate team and org structures
+
+4. **Hugging Face SmolAgents**
+   - minimal to use and great for learning/POC/testing
+   - **When to use:** education, research, prototypes, POCs
+  
+5. **Google ADK**
+   - Googles agent development kit
+   - Native to Google vertex and GCP
+  
+---
+# Basic Steps to Build an Agentic System
+
+1. **Step 1 -- Pick the AI brain (LLM)**
+-- This is the AI agent's "reasoning engine"
+```
+# example
+from langchain.chat_models import init_chat_model
+
+model = init_chat_model('openai-gpt-4o-mini')
+```
+
+2. **Step 2 -- Define tools**
+```
+# example
+from langchain_core.tools import tool
+import math
+
+@tool
+def add_tool(a: float, b: float) -> float:
+  """Add two numbers together. Use for addition operations."""
+  return a+b
+
+```
+3. **Step 3 -- Create Agent**
+   - This is simply done in langchain with single line of code:
+```
+from langchain.agents import create_agent
+
+agent = create_agent(
+  model=model,
+  tools=tools
+ )
+- Runs ReAct loop "in the backend": Reason -> Act --> Observe
+
+```
+4. **Step 4 -- Ask questions/query**
+- invoking the agent:
+
+```
+def run_agent(question: str):
+  """Run agent and print execution trace."""
+  print(f" User: {question}")
+  print("-" * 50)
+
+  result = agent.invoke({
+    "messages": [("user",question)]
+  })
+  print(" Agent:", result)
+
+
+```
+
+---
+## Python essentials for building agents
+
+1. **Decorators**
+   - `@tool` will wrap functions so an agent can register it as a callable tool.
+   - The `@` is the decorator label
+
+2. **Docstrings**
+   - `""" """`
+   - Triple quoted strings describe what the tool does.
+   - **Important** so the LLM reads the docstrings to determine WHEN and HOW to use each tool.
+   - **Docstrings should be detailed. Vague docstrings will open the door for hallucinations and fabrications. These are instructions for the LLM to understand when and how to use the tool.**
+
+3. **Type Hints**
+   - example: `(a: float)`
+   - This tells the LLM reasoning brain what data type each parameter is supposed to expect.
+   - Agent reads these as type hints.
+   - If the wrong data types are received this can lead to hallucinations and fabrications.
+   - This is another reason why using Pydantic is often preferred.
+
+4. **Return Types**
+   - example: `(-> float)`
+   - This after the function parameters will inform the agent what kind of data the tool sends back.
+   - This helps the agent plan how to use a tool's output as another tool's input in a loop.
+  
+### Why this matters?
+- The LLM never sees the entire function for your tools.
+- The LLM gets a JSON send to it such as this below. These are explicit instructions for how the LLM can use the tool. 
+
+```
+{"name":"add","description":"Add two numbers...","parameters":{"a":{"type":"number"},"b":{"type":"number"}}}
+```
 
