@@ -149,5 +149,15 @@ Observe --> Reason --> Act --> Observe again
   - Code for the agent validates the LLM tool call then executes it.
   - MCPs provide a standardized way to connect LLMs with context they need to function such as resources, prompts, and tools.
 
-   
+---
+## 3 - Loops Orchestration or "Agent Nervous System"
+- Acts as a router for the entire body system.
+- These are the main components
+
+1. **Loop Management**
+   - `Think-Act-Observe cycle` is run by this (entire "reasoning cycle")
+   - It knows when to continue --> pause --> or stop.
+
+2. **Reasoning Strategy**
+   - 
 
