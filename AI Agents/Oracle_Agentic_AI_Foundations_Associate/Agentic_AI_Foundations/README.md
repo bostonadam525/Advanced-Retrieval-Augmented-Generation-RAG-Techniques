@@ -4,10 +4,22 @@
 
 ---
 # Oracle University - AI Agents Certification 
-- Notes related to this material. 
-
-
-
+- Notes related to this material.
+---
+# Summary of Agentic Foundations
+1. AI Agent(LLM-based) = LLM + Tools + Loops
+2. LLM is the REASONING core of the system, and selecting the right LLM for the job requires careful consideration.
+3. Tools are what transform LLMs from being only "text generators" to an actual actor in the real-world.
+4. Loop (orchestration) conducts everything in an AI agentic system -- this is the operating system (OS) for an Agent.
+   - Loop runs the reasoning cycle
+   - Loop manages States
+   - Loop routes tools
+   - Loop applies guardrails
+  
+5. ReAct (Reasoning & Acting) = Chain-of-Thought + Tool use in a loop
+6. Complex systems are what help when complexity increases
+7. LangChain/LangGraph is great for a simple system or POC. However, the more complex your system becomes you need to think outside of a framework like LangChain.
+8. Layered Guardrails are important architecture for AI Agents. One eval or check is not enough. 
 ---
 # AI Agents Overview
 
@@ -366,3 +378,73 @@ def run_agent(question: str):
 {"name":"add","description":"Add two numbers...","parameters":{"a":{"type":"number"},"b":{"type":"number"}}}
 ```
 
+---
+# Guardrails + Safety for AI Agents
+
+## AI Agent Threat Models - What can go wrong?
+
+1. **Prompt Injection**
+   - This is one of the top concerns!!
+   - There are 2 types:
+     - 1) Direct --> input to the agent loop
+       2) Indirect --> content or info the agent retrieves (e.g. external resources such as webpage
+
+2. **Tool Misuse**
+   - Agent calls a tool with incorrect or dangerous arguments.
+   - Examples:
+     - emails unauthorized access
+     - destructive database queries (e.g. delete data)
+
+3. **Memory Poisoning**
+   - Malicious content stored in memory can affect future agent behavior for users and others
+   - Example: **Knowledge base contaminated**
+   - If memory is shared or used more broadly this is a MAJOR CONCERN
+   - **All future interactions affected**
+  
+
+4. **Data Exfiltration**
+   - AI Agent tricked into leaking very sensitive data through tool calls or responses.
+
+5. **Runaway Execution**
+   - Infinite loops or excessive API calls will lead to massive cost overruns and system strain.
+
+---
+## Layered Guardrails Architecture
+- **KEY TAKEAWAY:** No single layer is sufficient.
+  - Layered guardrails are a more robust defense than 1 layer. This is similar to if you were only monitoring your production system with 1 metric/eval. You would miss significant errors.
+  - The same logic applies to AI agent system guardrails!
+  - **You can always implement RISK BASED ROUTING. Not all layers require this but it depends on your data and your domain.**
+
+1. **Input Validation**
+  - **This is the layer that comes BEFORE the LLM Reasoning.**
+  - All external/retrieved content should be treated as:
+    - **untrusted data**
+    - **PII detection**
+    - **Rate limiting**
+
+
+2. **LLM Guardrails**
+   - Safety system prompts
+   - Tool access controls
+   - Low-confidence outputs will get routed for human review
+
+3. **Tool Execution Boundaries**
+   - Least-privilege --> each tool has MINIMUM permissions
+   - Input validation --> tool arguments must be validated (e.g. pydantic)
+   - Sandboxing --> code execution in containers
+   - Human-in-the-loop --> humans must validate content
+  
+4. **Output Filtering**
+   - **This is POST LLM processing**
+   - PII screening
+   - Content policy
+   - Relevance verification
+  
+5. **Observability & Monitoring**
+   - **This occurs across ALL LAYERS**
+   - Trace logging
+   - Tool calls
+   - Outputs
+   - Errors
+   - Costs
+   
