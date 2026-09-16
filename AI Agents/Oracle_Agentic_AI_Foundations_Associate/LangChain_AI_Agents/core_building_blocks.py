@@ -23,11 +23,16 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Find the .env file sitting next to THIS script (not wherever we ran from).
-# Path(__file__) = this file; .parent = its folder. This makes the key load
-# correctly no matter which directory you launch python from.
+# Find the .env file starting from THIS script's folder (not wherever we ran
+# from) and walking UP through parent folders until one is found. So a .env
+# next to this script OR in the project folder above it both work, no matter
+# which directory you launch python from.
 script_dir = Path(__file__).resolve().parent
-env_path = script_dir / ".env"
+env_path = None
+for folder in [script_dir, *script_dir.parents]:
+    if (folder / ".env").exists():
+        env_path = folder / ".env"
+        break
 
 #print("Current working directory:", os.getcwd())
 #print("Script directory:", script_dir)
