@@ -1,0 +1,23 @@
+[project]
+name = "oracle-agentic-ai-fundamentals"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=1.4.1",
+    "langchain-openai>=1.6.2",
+    "langgraph>=1.2.11",
+    "python-dotenv>=1.2.3",
+]
+
+[project.scripts]
+oracle-agentic-ai-fundamentals = "oracle_agentic_ai_fundamentals:main"
+
+[build-system]
+requires = ["uv_build>=0.12.8,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+# Project lives in OneDrive, which rejects hardlinks from the uv cache (os error 396)
+link-mode = "copy"

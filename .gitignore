@@ -1,0 +1,14 @@
+# Secrets
+.env
+.env.*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Tooling / OS
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+desktop.ini
